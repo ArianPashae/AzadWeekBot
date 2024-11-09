@@ -81,4 +81,22 @@ function sendVoice($chat_id, $voice, $caption = null) {
     }
     sendRequest($url, $post_fields);
 }
+// Function to Send All
+function sendToAll($message, $photo = null, $voice = null) {
+    $file_path = "users.txt";
+    if (!file_exists($file_path)) {
+        file_put_contents($file_path, '');
+    }
+    $users = explode("\n", trim(file_get_contents($file_path)));
+    
+    foreach ($users as $user) {
+        if ($photo) {
+            sendPhoto($user, $photo, $message);
+        } elseif ($voice) {
+            sendVoice($user, $voice, $message);
+        } else {
+            sendMessage($user, $message);
+        }
+    }
+}
 ?>
