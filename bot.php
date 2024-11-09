@@ -39,4 +39,46 @@ function setUserState($chat_id, $state) {
     $states[$chat_id] = $state;
     file_put_contents($state_file, json_encode($states));
 }
+// Function to Send Message
+function sendMessage($chat_id, $text, $reply_markup = null, $parse_mode = null) {
+    global $api_url;
+    $url = $api_url . "sendMessage";
+    $post_fields = [
+        'chat_id' => $chat_id,
+        'text' => $text,
+    ];
+    if ($reply_markup) {
+        $post_fields['reply_markup'] = json_encode($reply_markup);
+    }
+    if ($parse_mode) {
+        $post_fields['parse_mode'] = $parse_mode;
+    }
+    sendRequest($url, $post_fields);
+}
+// Function to Send Photo
+function sendPhoto($chat_id, $photo, $caption = null) {
+    global $api_url;
+    $url = $api_url . "sendPhoto";
+    $post_fields = [
+        'chat_id' => $chat_id,
+        'photo' => $photo,
+    ];
+    if ($caption) {
+        $post_fields['caption'] = $caption;
+    }
+    sendRequest($url, $post_fields);
+}
+// Function to Send Voice
+function sendVoice($chat_id, $voice, $caption = null) {
+    global $api_url;
+    $url = $api_url . "sendVoice";
+    $post_fields = [
+        'chat_id' => $chat_id,
+        'voice' => $voice,
+    ];
+    if ($caption) {
+        $post_fields['caption'] = $caption;
+    }
+    sendRequest($url, $post_fields);
+}
 ?>
