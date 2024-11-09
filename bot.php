@@ -145,4 +145,12 @@ function getWeekInfo($date) {
     }
     return null;
 }
+// Function to Checking the user's membership in the channel
+function isUserInChannel($chat_id) {
+    global $api_url, $channel_username;
+    $channel_username = str_replace('@', '', $channel_username); // Remove @ from the beginning of the channel ID
+    $url = $api_url . "getChatMember?chat_id=@$channel_username&user_id=$chat_id";
+    $response = json_decode(file_get_contents($url), true);
+    return isset($response['result']['status']) && $response['result']['status'] != 'left';
+}
 ?>
