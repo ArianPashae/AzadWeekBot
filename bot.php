@@ -26,4 +26,17 @@ function getUserInfo($chat_id) {
     $users = json_decode(file_get_contents($user_file), true);
     return isset($users[$chat_id]) ? $users[$chat_id] : null;
 }
+// Function to Get User State
+function getUserState($chat_id) {
+    global $state_file;
+    $states = file_exists($state_file) ? json_decode(file_get_contents($state_file), true) : [];
+    return isset($states[$chat_id]) ? $states[$chat_id] : null;
+}
+// Function to Set User State
+function setUserState($chat_id, $state) {
+    global $state_file;
+    $states = file_exists($state_file) ? json_decode(file_get_contents($state_file), true) : [];
+    $states[$chat_id] = $state;
+    file_put_contents($state_file, json_encode($states));
+}
 ?>
