@@ -17,4 +17,13 @@ function saveUserInfo($chat_id, $username) {
     $users[$chat_id] = ['username' => $username, 'joined_at' => time()]; // Save username and membership time
     file_put_contents($user_file, json_encode($users));
 }
+// Function to Get User Info
+function getUserInfo($chat_id) {
+    global $user_file;
+    if (!file_exists($user_file)) {
+        return null;
+    }
+    $users = json_decode(file_get_contents($user_file), true);
+    return isset($users[$chat_id]) ? $users[$chat_id] : null;
+}
 ?>
