@@ -110,4 +110,39 @@ function convertPersianToArabic($input) {
     $arabic_numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     return str_replace($persian_numbers, $arabic_numbers, $input);
 }
+// Weeks of each semester in pairs and odd
+$weeks = [
+    ['توضیح' => 'هفته فرد', 'start' => '1403/06/17', 'end' => '1403/06/23'],
+    ['توضیح' => 'هفته زوج', 'start' => '1403/06/24', 'end' => '1403/06/30'],
+    ['توضیح' => 'هفته فرد', 'start' => '1403/06/31', 'end' => '1403/07/06'],
+    ['توضیح' => 'هفته زوج', 'start' => '1403/07/07', 'end' => '1403/07/13'],
+    ['توضیح' => 'هفته فرد', 'start' => '1403/07/14', 'end' => '1403/07/20'],
+    ['توضیح' => 'هفته زوج', 'start' => '1403/07/21', 'end' => '1403/07/27'],
+    ['توضیح' => 'هفته فرد', 'start' => '1403/07/28', 'end' => '1403/08/04'],
+    ['توضیح' => 'هفته زوج', 'start' => '1403/08/05', 'end' => '1403/08/11'],
+    ['توضیح' => 'هفته فرد', 'start' => '1403/08/12', 'end' => '1403/08/18'],
+    ['توضیح' => 'هفته زوج', 'start' => '1403/08/19', 'end' => '1403/08/25'],
+    ['توضیح' => 'هفته فرد', 'start' => '1403/08/26', 'end' => '1403/09/02'],
+    ['توضیح' => 'هفته زوج', 'start' => '1403/09/03', 'end' => '1403/09/09'],
+    ['توضیح' => 'هفته فرد', 'start' => '1403/09/10', 'end' => '1403/09/16'],
+    ['توضیح' => 'هفته زوج', 'start' => '1403/09/17', 'end' => '1403/09/23'],
+    ['توضیح' => 'هفته فرد', 'start' => '1403/09/24', 'end' => '1403/09/30'],
+    ['توضیح' => 'هفته زوج', 'start' => '1403/10/01', 'end' => '1403/10/07'],
+    ['توضیح' => 'هفته فرد', 'start' => '1403/10/08', 'end' => '1403/10/14'],
+];
+// Function to Get Week Info
+function getWeekInfo($date) {
+    global $weeks;
+    $input_timestamp = jalaliToTimestamp($date);
+    
+    foreach ($weeks as $week) {
+        $start_timestamp = jalaliToTimestamp($week['start']);
+        $end_timestamp = jalaliToTimestamp($week['end']);
+        
+        if ($input_timestamp >= $start_timestamp && $input_timestamp <= $end_timestamp) {
+            return $week;
+        }
+    }
+    return null;
+}
 ?>
