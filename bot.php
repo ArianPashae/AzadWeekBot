@@ -14,7 +14,7 @@ $user_file = 'users.json'; // New file to store user information
 function saveUserInfo($chat_id, $username) {
     global $user_file;
     $users = file_exists($user_file) ? json_decode(file_get_contents($user_file), true) : [];
-    $users[$chat_id] = ['username' => $username, 'joined_at' => time()]; // ذخیره نام کاربر و زمان عضویت
+    $users[$chat_id] = ['username' => $username, 'joined_at' => time()]; // Save username and membership time
     file_put_contents($user_file, json_encode($users));
 }
 ?>
