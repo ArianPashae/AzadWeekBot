@@ -104,4 +104,10 @@ function jalaliToTimestamp($jalali_date) {
     list($year, $month, $day) = explode('/', $jalali_date);
     return jmktime(0, 0, 0, $month, $day, $year);
 }
+// Function to Convert Persian number to Arabic number
+function convertPersianToArabic($input) {
+    $persian_numbers = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+    $arabic_numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    return str_replace($persian_numbers, $arabic_numbers, $input);
+}
 ?>
