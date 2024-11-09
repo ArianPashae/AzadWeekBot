@@ -99,4 +99,9 @@ function sendToAll($message, $photo = null, $voice = null) {
         }
     }
 }
+// Function to jalali_date
+function jalaliToTimestamp($jalali_date) {
+    list($year, $month, $day) = explode('/', $jalali_date);
+    return jmktime(0, 0, 0, $month, $day, $year);
+}
 ?>
