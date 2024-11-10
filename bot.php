@@ -364,6 +364,32 @@ case "📢 ارسال پیام به همه کاربران":
         setUserState($chat_id, 'waiting_for_broadcast');
     }
     break;
+    // If the user selects the "↩️ خروج" option
+case "↩️ خروج":
+    // Check if the user is currently in the 'waiting_for_broadcast' state
+    if ($user_state === 'waiting_for_broadcast') {
+        // Cancel the broadcast message operation and return to the main menu
+        $reply_markup = [
+            'keyboard' => [
+                [['text' => "🔍 بررسی تاریخ"], ['text' => "📅 وضعیت امروز"]],
+                [['text' => "🔰 درباره ما"], ['text' => "🗓 لیست هفته‌ها"]],
+            ],
+            'resize_keyboard' => true,
+            'one_time_keyboard' => false,
+        ];
+
+        // If the user is an admin, add the admin-specific options
+        if (in_array($chat_id, $admin_chat_ids)) {
+            $reply_markup['keyboard'][] = [['text' => "📢 ارسال پیام به همه کاربران"]];
+            $reply_markup['keyboard'][] = [['text' => "📊 آمار کاربران"]];
+        }
+
+        // Inform the user that the broadcast mode has been exited
+        sendMessage($chat_id, "❌ شما از حالت ارسال پیام خارج شدید.", $reply_markup);
+        setUserState($chat_id, null); // Reset the user state
+    }
+    break;
+
 
 
 
