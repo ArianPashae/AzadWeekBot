@@ -273,6 +273,28 @@ case "↩️ خروج از بررسی تاریخ":
         setUserState($chat_id, null);
     }
     break;
+    // If the user selects the "🗓 لیست هفته‌ها" option
+case "🗓 لیست هفته‌ها":
+    // Check if the user is currently in 'waiting_for_date' state
+    if ($user_state === 'waiting_for_date') {
+        // Inform the user that they need to complete the date check first
+        sendMessage($chat_id, "❗️ شما در حال بررسی تاریخ هستید. لطفاً تاریخ را بررسی کنید.");
+    } else {
+        // Generate the list of weeks with start and end dates, and their description
+        $weeks_text = "🗓 لیست هفته‌ها:\n\n";
+        foreach ($weeks as $index => $week) {
+            $number = $index + 1; // Week number
+            $color = ($index % 2 === 0) ? "🟢" : "🔴"; // Determine color based on week number
+            $weeks_text .= "$color $number. از {$week['start']} تا {$week['end']} - {$week['توضیح']}\n"; // Add week info
+        }
+        // Send the list of weeks to the user
+        sendMessage($chat_id, $weeks_text);
+        
+        // Reset the user's state to null
+        setUserState($chat_id, null);
+    }
+    break;
+
 
 
 
