@@ -216,6 +216,14 @@ switch ($message) {
             'resize_keyboard' => true, // Automatically resize keyboard to fit screen
             'one_time_keyboard' => false, // Keep the keyboard open after user presses a button
         ];
+        // Only display the "Send message to all users" option if the user is an admin
+        if (in_array($chat_id, $admin_chat_ids)) {
+            // Add a button for sending a message to all users
+            $reply_markup['keyboard'][] = [['text' => "📢 ارسال پیام به همه کاربران"]];
+            // Add a button for viewing user statistics
+            $reply_markup['keyboard'][] = [['text' => "📊 آمار کاربران"]];
+        }
+
 
 
 
