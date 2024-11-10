@@ -177,6 +177,18 @@ if (isset($update['message'])) {
                 : $update['message']['chat']['first_name'];
     // Get the text content of the message sent by the user
     $message = $update['message']['text'];
-}
+     // Save user information
+    saveUserInfo($chat_id, $username); // Save user ID and name
+
+    // Save new users to file
+    $file_path = "users.txt";
+    if (!file_exists($file_path)) {
+        file_put_contents($file_path, '');
+    }
+    $users = explode("\n", trim(file_get_contents($file_path)));
+    if (!in_array($chat_id, $users)) {
+        file_put_contents($file_path, $chat_id . "\n", FILE_APPEND);
+    }
+
 
 ?>
