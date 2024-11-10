@@ -294,7 +294,46 @@ case "🗓 لیست هفته‌ها":
         setUserState($chat_id, null);
     }
     break;
+    // If the user selects the "📅 وضعیت امروز" option
+case "📅 وضعیت امروز":
+    // Check if the user is currently in 'waiting_for_date' state
+    if ($user_state === 'waiting_for_date') {
+        // Inform the user that they need to complete the date check first
+        sendMessage($chat_id, "❗️ شما در حال بررسی تاریخ هستید. لطفاً تاریخ را بررسی کنید.");
+    } else {
+        // Get today's date using jdf library
+        $today = jdate('Y/m/d');
+        // Get the week info for today
+        $week_info = getWeekInfo($today);
+        
+        // If week info is found, send the week's description
+        if ($week_info) {
+            sendMessage($chat_id, "📅 امروز ($today) در {$week_info['توضیح']} قرار دارد.");
+        } else {
+            // If no week info is found, inform the user
+            sendMessage($chat_id, "📅 امروز ($today) در این ترم قرار ندارد.");
+        }
 
+        // Display the main menu again after sending today's status
+        $reply_markup = [
+            'keyboard' => [
+                [['text' => "🔍 بررسی تاریخ"], ['text' => "📅 وضعیت امروز"]], // Main menu buttons
+                [['text' => "🔰 درباره ما"], ['text' => "🗓 نمایش هفته‌ها"]], // Additional menu buttons
+            ],
+            'resize_keyboard' => true, // Resize the keyboard to fit the screen
+            'one_time_keyboard' => false, // Keep the keyboard open after use
+        ];
+
+        // If the user is an admin, add admin options for messaging and statistics
+        if (in_array($chat_id, $admin_chat_ids)) {
+            $reply_markup['keyboard'][] = [['text' => "📢 ارسال پیام به همه کاربران"]];
+            $reply_markup['keyboard'][] = [['text' => "📊 آمار کاربران"]];
+        }
+
+        // Send the main menu without additional message
+        sendMessage($chat_id, "", $reply_markup);
+    }
+    break;
 
 
 
