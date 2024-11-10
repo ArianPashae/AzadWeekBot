@@ -350,6 +350,21 @@ case "🔰 درباره ما":
         sendMessage($chat_id, $about_text, null, "Markdown");
     }
     break;
+    // If the user selects the "📢 ارسال پیام به همه کاربران" option
+case "📢 ارسال پیام به همه کاربران":
+    // Check if the user is an admin by comparing chat_id with admin_chat_ids
+    if (in_array($chat_id, $admin_chat_ids)) {
+        // Prompt the admin to send a message for broadcasting
+        sendMessage($chat_id, "✍ لطفاً پیام خود را ارسال کنید:", [
+            'keyboard' => [[['text' => "↩️ خروج"]]], // Provide a "↩️ Exit" button
+            'resize_keyboard' => true,  // Resize the keyboard to fit the screen
+            'one_time_keyboard' => false,  // Keep the keyboard available for multiple uses
+        ]);
+        // Set user state to 'waiting_for_broadcast' to handle the broadcasting process
+        setUserState($chat_id, 'waiting_for_broadcast');
+    }
+    break;
+
 
 
 
