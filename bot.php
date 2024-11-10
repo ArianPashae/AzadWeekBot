@@ -189,6 +189,18 @@ if (isset($update['message'])) {
     if (!in_array($chat_id, $users)) {
         file_put_contents($file_path, $chat_id . "\n", FILE_APPEND);
     }
+    // Checking the user's membership in the channel
+    if (!isUserInChannel($chat_id)) {
+        $inline_keyboard = [
+            [['text' => "عضویت در چنل", 'url' => "https://t.me/$channel_username"]],
+            [['text' => "✅  تایید عضویت", 'callback_data' => "check_membership"]]
+        ];
+        $reply_markup = ['inline_keyboard' => $inline_keyboard];
+        sendMessage($chat_id, "❌ شما باید عضو چنل رشته مهندسی کامپیوتر دانشگاه آزاد کرمانشاه باشید تا بتوانید از ربات استفاده کنید.
+        
+✅ لطفاً دکمه زیر را بزنید و دوباره تلاش کنید.", $reply_markup);
+        exit;
+    }
 
 
 ?>
