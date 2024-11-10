@@ -246,6 +246,33 @@ case "🔍 بررسی تاریخ":
     // Set the user's state to 'waiting_for_date' to track their input
     setUserState($chat_id, 'waiting_for_date');
     break;
+// If the user selects the "↩️ خروج از بررسی تاریخ" option, exit the date-checking mode
+case "↩️ خروج از بررسی تاریخ":
+    // Check if the user is currently in the 'waiting_for_date' state
+    if ($user_state === 'waiting_for_date') {
+        // Set up the main menu keyboard layout
+        $reply_markup = [
+            'keyboard' => [
+                [['text' => "🔍 بررسی تاریخ"], ['text' => "📅 وضعیت امروز"]], // Main menu buttons
+                [['text' => "🔰 درباره ما"], ['text' => "🗓 لیست هفته‌ها"]], // Additional menu buttons
+            ],
+            'resize_keyboard' => true, // Resize the keyboard to fit the screen
+            'one_time_keyboard' => false, // Keep the keyboard open after use
+        ];
+
+        // If the user is an admin, display admin options for messaging and statistics
+        if (in_array($chat_id, $admin_chat_ids)) {
+            $reply_markup['keyboard'][] = [['text' => "📢 ارسال پیام به همه کاربران"]];
+            $reply_markup['keyboard'][] = [['text' => "📊 آمار کاربران"]];
+        }
+
+        // Send the message to inform the user they have exited date-checking mode
+        sendMessage($chat_id, "شما از حالت بررسی تاریخ خارج شدید.\n❗️ لطفاً یکی از گزینه‌ها را انتخاب کنید:", $reply_markup);
+        
+        // Reset the user's state to null
+        setUserState($chat_id, null);
+    }
+    break;
 
 
 
