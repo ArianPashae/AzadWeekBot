@@ -201,6 +201,22 @@ if (isset($update['message'])) {
 ✅ لطفاً دکمه زیر را بزنید و دوباره تلاش کنید.", $reply_markup);
         exit;
     }
+    // Get user status
+    $user_state = getUserState($chat_id);
+    // Check the value of the user's message and respond accordingly
+switch ($message) {
+    // If the message is "/start", set up the keyboard layout for the main menu
+    case "/start":
+        $reply_markup = [
+            'keyboard' => [
+                // Define two rows of buttons
+                [['text' => "🔍 بررسی تاریخ"], ['text' => "📅 وضعیت امروز"]], // Row 1 buttons
+                [['text' => "🔰 درباره ما"], ['text' => "🗓 لیست هفته‌ها"]], // Row 2 buttons
+            ],
+            'resize_keyboard' => true, // Automatically resize keyboard to fit screen
+            'one_time_keyboard' => false, // Keep the keyboard open after user presses a button
+        ];
+
 
 
 ?>
