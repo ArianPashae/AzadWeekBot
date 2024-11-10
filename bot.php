@@ -153,4 +153,15 @@ function isUserInChannel($chat_id) {
     $response = json_decode(file_get_contents($url), true);
     return isset($response['result']['status']) && $response['result']['status'] != 'left';
 }
+// Send an HTTP POST request to a specified URL.
+function sendRequest($url, $post_fields) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    return $result;
+}
 ?>
