@@ -236,6 +236,17 @@ sendMessage($chat_id, "🎉 خوش آمدید به ربات هفته‌های ف
 // Clear the user's state, as they have just started the bot
 setUserState($chat_id, null);
 break;
+    // If the user selects the "🔍 بررسی تاریخ" option, prompt them to enter a date
+case "🔍 بررسی تاریخ":
+    sendMessage($chat_id, "❗️ لطفاً تاریخ را به فرمت YYYY/MM/DD وارد کنید.\nاگر می‌خواهید از حالت بررسی خارج شوید، روی دکمه زیر کلیک کنید.", [
+        'keyboard' => [[['text' => "↩️ خروج از بررسی تاریخ"]]], // Add exit button
+        'resize_keyboard' => true, // Resize the keyboard to fit the screen
+        'one_time_keyboard' => true, // Close the keyboard after use
+    ]);
+    // Set the user's state to 'waiting_for_date' to track their input
+    setUserState($chat_id, 'waiting_for_date');
+    break;
+
 
 
 
