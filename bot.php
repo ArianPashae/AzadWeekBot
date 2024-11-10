@@ -167,4 +167,16 @@ function sendRequest($url, $post_fields) {
 // Receive input from Telegram
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
+// Check if there is a message in the update received from Telegram
+if (isset($update['message'])) {
+    // Get the chat ID of the user who sent the message
+    $chat_id = $update['message']['chat']['id'];
+    // Check if the user has a username; if not, use their first name instead
+    $username = isset($update['message']['chat']['username']) 
+                ? $update['message']['chat']['username'] 
+                : $update['message']['chat']['first_name'];
+    // Get the text content of the message sent by the user
+    $message = $update['message']['text'];
+}
+
 ?>
