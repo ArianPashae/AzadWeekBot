@@ -503,6 +503,32 @@ case "↩️ خروج":
     // Confirm to the admin that the message has been sent to all users
     sendMessage($chat_id, "✅ پیام شما به همه کاربران ارسال شد.");
 
+    // **اینجا را اضافه کنید:**
+$reply_markup = [
+    // Define the main keyboard layout with buttons for regular users
+    'keyboard' => [
+        [['text' => "🔍 بررسی تاریخ"], ['text' => "📅 وضعیت امروز"]],
+        [['text' => "🔰 درباره ما"], ['text' => "🗓 لیست هفته‌ها"]],
+    ],
+    'resize_keyboard' => true,  // Automatically resize keyboard for optimal display
+    'one_time_keyboard' => false,  // Keep the keyboard open after each message
+];
+
+// Add additional options for admin users
+if (in_array($chat_id, $admin_chat_ids)) {
+    $reply_markup['keyboard'][] = [['text' => "📢 ارسال پیام به همه کاربران"]];
+    $reply_markup['keyboard'][] = [['text' => "📊 آمار کاربران"]];
+}
+
+// Send a message to the user confirming they have exited broadcast mode, with the updated keyboard
+sendMessage($chat_id, "❌ شما از حالت ارسال پیام خارج شدید.", $reply_markup);
+
+// Reset the user's state to null to clear any previous actions
+setUserState($chat_id, null);
+break;
+    }
+}
+    
 
 
 
