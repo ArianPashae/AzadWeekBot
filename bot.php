@@ -527,16 +527,44 @@ sendMessage($chat_id, "❌ شما از حالت ارسال پیام خارج ش�
 setUserState($chat_id, null);
 break;
     }
+} elseif (isset($update['callback_query'])) {
+    $callback_query = $update['callback_query'];
+    $chat_id = $callback_query['message']['chat']['id'];
+    $callback_data = $callback_query['data'];
+
+    // Check if the callback data is for checking membership status
+    if ($callback_data === "check_membership") {
+        
+        // If the user is in the channel, show the main keyboard
+        if (isUserInChannel($chat_id)) {
+            $reply_markup = [
+                'keyboard' => [
+                    [['text' => "🔍 بررسی تاریخ"], ['text' => "📅 وضعیت امروز"]],
+                    [['text' => "🔰 درباره ما"], ['text' => "🗓 لیست هفته‌ها"]],
+                ],
+                'resize_keyboard' => true,  // Automatically resize keyboard for optimal display
+                'one_time_keyboard' => false,  // Keep the keyboard open after each message
+            ];
+        
+            // Only if the user is an admin, add the options for broadcasting and viewing stats
+            if (in_array($chat_id, $admin_chat_ids)) {
+                $reply_markup['keyboard'][] = [['text' => "📢 ارسال پیام به همه کاربران"]];
+                $reply_markup['keyboard'][] = [['text' => "📊 آمار کاربران"]];
+            }
+        
+            // Send message confirming the user is in the channel and can use the bot
+            sendMessage($chat_id, "✅ شما عضو چنل شده‌اید و می‌توانید از ربات استفاده کنید.", $reply_markup);
+        } else {
+            // Show inline keyboard to allow the user to join the channel
+            $inline_keyboard = [
+                [['text' => "عضویت در چنل", 'url' => "https://t.me/$channel_username"]],
+                [['text' => "✅  تایید عضویت", 'callback_data' => "check_membership"]]
+            ];
+            $reply_markup = ['inline_keyboard' => $inline_keyboard];
+            
+            // Notify the user they need to join the channel first
+            sendMessage($chat_id, "❌ شما هنوز عضو چنل نشده‌اید. لطفاً دکمه زیر را بزنید و دوباره تلاش کنید.", $reply_markup);
+        }
+    }
 }
-    
-
-
-
-
-
-
-
-
-
-
 ?>
