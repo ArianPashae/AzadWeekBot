@@ -455,6 +455,30 @@ case "↩️ خروج":
         }
     }
     break;
+    default:
+    // Check if the user is in the 'waiting_for_date' state
+    if ($user_state === 'waiting_for_date') {
+        
+        // Validate that the message is in the correct date format (Gregorian or Persian numbers)
+        if (preg_match('/^\d{4}\/\d{2}\/\d{2}$/', $message) || preg_match('/^[۰-۹]{4}\/[۰-۹]{2}\/[۰-۹]{2}$/u', $message)) {
+            
+            // Convert the input date to Arabic numbers
+            $message = convertPersianToArabic($message);
+            
+            // Get week information for the provided date
+            $week_info = getWeekInfo($message);
+            
+            // Check if the date falls within the current term and send appropriate message
+            if ($week_info) {
+                sendMessage($chat_id, "❗️ تاریخ $message در {$week_info['توضیح']} قرار دارد.");
+            } else {
+                sendMessage($chat_id, "❗️ تاریخ $message در این ترم قرار ندارد.");
+            }
+        } else {
+            // Notify the user to enter the date in the correct format
+            sendMessage($chat_id, "❗️ لطفاً تاریخ را به فرمت YYYY/MM/DD وارد کنید.");
+        }
+    }
 
 
 
