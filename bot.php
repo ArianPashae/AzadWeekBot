@@ -389,6 +389,73 @@ case "↩️ خروج":
         setUserState($chat_id, null); // Reset the user state
     }
     break;
+    case "📊 آمار کاربران":
+    // Check if the user is an admin
+    if (in_array($chat_id, $admin_chat_ids)) {
+        
+        // Count the total number of users from "users.txt" file
+        $user_count = count(explode("\n", trim(file_get_contents("users.txt"))));
+        
+        // Get today's date in Jalali (Persian) format
+        $today = jdate('Y/m/d');
+        
+        // Get the week information based on today's date
+        $week_info = getWeekInfo($today);
+        
+        // Set the current week status or default to "current term" if no info is available
+        $week_status = $week_info ? $week_info['توضیح'] : "Current Term";
+
+        // Calculate the number of users added this week
+        $users = json_decode(file_get_contents($user_file), true);
+        
+        // Convert the week's start and end dates from Jalali to timestamps
+        $week_start = jalaliToTimestamp($week_info['start']);
+        $week_end = jalaliToTimestamp($week_info['end']);
+        
+        // Initialize counters and lists for this week's users
+        $week_users_count = 0;
+        $week_users_list = [];
+        $all_users_list = [];
+
+        // Loop through all users to identify those who joined this week
+        foreach ($users as $user_id => $user_info) {
+            // Add user to the total users list
+            $all_users_list[] = "$user_id - {$user_info['username']}";
+            
+            // Check if the user's join date is within this week's range
+            if ($user_info['joined_at'] >= $week_start && $user_info['joined_at'] <= $week_end) {
+                $week_users_count++;
+                $week_users_list[] = "$user_id - {$user_info['username']}";
+            }
+        }
+
+        // Create the user statistics message to send to the admin
+        $stats_text = "📊 User Statistics\n\n";
+        $stats_text .= "👥 Total Users: $user_count\n";
+        $stats_text .= "👥 Users This Week: $week_users_count\n";
+
+        // Send the statistics message to the admin
+        sendMessage($chat_id, $stats_text);
+
+        // Create the content for the user list file and save it as a text file
+        $users_file_content = implode("\n", $all_users_list);
+        $users_file_path = "all_users.txt";
+        file_put_contents($users_file_path, $users_file_content);
+
+        // Check if the file was created and send it to the admin
+        if (file_exists($users_file_path)) {
+            $url = $api_url . "sendDocument";
+            $post_fields = [
+                'chat_id' => $chat_id,
+                'document' => new CURLFile(realpath($users_file_path))
+            ];
+
+            // Send the request to upload the user list file to the admin
+            sendRequest($url, $post_fields);
+        }
+    }
+    break;
+
 
 
 
