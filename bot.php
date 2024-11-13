@@ -478,7 +478,31 @@ case "↩️ خروج":
             // Notify the user to enter the date in the correct format
             sendMessage($chat_id, "❗️ لطفاً تاریخ را به فرمت YYYY/MM/DD وارد کنید.");
         }
+    } elseif ($user_state === 'waiting_for_broadcast') {
+    
+    // Check if the received message contains a photo
+    if (isset($update['message']['photo'])) {
+        // Get the file ID of the largest size photo
+        $photo = end($update['message']['photo'])['file_id'];
+        
+        // Send the photo with its caption to all users
+        sendToAll($update['message']['caption'], $photo);
+    
+    // Check if the received message contains a voice message
+    } elseif (isset($update['message']['voice'])) {
+        $voice = $update['message']['voice']['file_id'];
+        
+        // Send the voice message with its caption to all users
+        sendToAll($update['message']['caption'], null, $voice);
+    
+    // Otherwise, send a text message to all users
+    } else {
+        sendToAll($message);
     }
+    
+    // Confirm to the admin that the message has been sent to all users
+    sendMessage($chat_id, "✅ پیام شما به همه کاربران ارسال شد.");
+
 
 
 
