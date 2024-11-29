@@ -27,7 +27,7 @@ Before running the bot, ensure you have:
 
 1. Clone the repository to your server:  
    ```bash
-   git clone https://github.com/yourusername/AzadWeek.git
+   git clone https://github.com/ArianPashae/AzadWeekBot.git
    ```  
 
 2. Navigate to the project directory:  
