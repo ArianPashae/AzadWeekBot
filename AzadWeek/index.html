@@ -1,0 +1,2391 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#090D16">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>آزادویک</title>
+    <meta name="description" content="تشخیص فوری هفته زوج و فرد دانشگاه آزاد، مشاهده تقویم آموزشی ترم جاری، بررسی وضعیت هر تاریخ شمسی و جدول کامل هفته‌های آموزشی در مینی‌اپ تلگرام آزادویک.">
+    <meta name="keywords" content="هفته زوج و فرد دانشگاه آزاد, تقویم آموزشی دانشگاه آزاد, تشخیص هفته فرد و زوج, آزادویک, AzadWeek, هفته زوج یا فرد, تقویم ترم دانشگاه آزاد">
+    <meta name="author" content="AzadWeek">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://arianpashae.com/UniWebsite/AzadWeek/">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:site_name" content="آزادویک | AzadWeek">
+    <meta property="og:title" content="تقویم هفته‌های زوج و فرد دانشگاه آزاد | آزادویک">
+    <meta property="og:description" content="امروز هفته زوج است یا فرد؟ مشاهده فوری وضعیت هفته‌های آموزشی دانشگاه آزاد، جستجوی تاریخ امتحانات و تقویم کامل ترم.">
+    <meta property="og:url" content="https://arianpashae.com/UniWebsite/AzadWeek/">
+    <meta property="og:image" content="https://arianpashae.com/UniWebsite/AzadWeek/assets/favicon.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="تقویم هفته‌های زوج و فرد دانشگاه آزاد | آزادویک">
+    <meta name="twitter:description" content="تشخیص فوری هفته زوج و فرد دانشگاه آزاد و جدول کامل هفته‌های آموزشی ترم جاری در تلگرام.">
+    <meta name="twitter:image" content="https://arianpashae.com/UniWebsite/AzadWeek/assets/favicon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "آزادویک (AzadWeek)",
+      "alternateName": "تقویم هفته‌های زوج و فرد دانشگاه آزاد",
+      "url": "https://arianpashae.com/UniWebsite/AzadWeek/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Telegram WebApp, Android, iOS, Web",
+      "inLanguage": "fa-IR",
+      "description": "سامانه و مینی‌اپ تلگرام برای تشخیص فوری هفته‌های زوج و فرد دانشگاه آزاد اسلامی، بررسی تاریخ‌های شمسی و مشاهده جدول کامل هفته‌های ترم.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "IRR"
+      }
+    }
+    </script>
+
+    <script src="assets/telegram-web-app.js?v=16"></script>
+    <script>
+    (function () {
+        'use strict';
+        var tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+        if (tg) {
+            try { tg.ready(); } catch (_) {}
+            try { tg.expand(); } catch (_) {}
+            try { if (typeof tg.disableVerticalSwipes === 'function') tg.disableVerticalSwipes(); } catch (_) {}
+            try {
+                var pf = String(tg.platform || '').toLowerCase();
+                var ua = String(navigator.userAgent || '');
+                var isDesk = ['tdesktop', 'macos', 'windows', 'linux', 'web', 'weba', 'webk', 'unigram'].indexOf(pf) !== -1;
+                var isTab = /ipad|tablet|playbook|silk/i.test(ua) || (/android/i.test(ua) && !/mobile/i.test(ua));
+                var sw = (window.screen && window.screen.width) ? window.screen.width : window.innerWidth;
+                var sh = (window.screen && window.screen.height) ? window.screen.height : window.innerHeight;
+                var isMob = !isDesk && !isTab && Math.min(sw || 390, sh || 844) < 600 && (pf === 'ios' || pf === 'android' || pf === 'android_x' || pf === 'mobile' || /iphone|ipod|android.*mobile/i.test(ua));
+                var reqFs = function () {
+                    try { tg.expand(); } catch (_) {}
+                    try { if (typeof tg.requestFullscreen === 'function') tg.requestFullscreen(); } catch (_) {}
+                    try {
+                        if (window.Telegram && window.Telegram.WebView && typeof window.Telegram.WebView.postEvent === 'function') {
+                            window.Telegram.WebView.postEvent('web_app_expand');
+                            window.Telegram.WebView.postEvent('web_app_request_fullscreen');
+                        }
+                    } catch (_) {}
+                };
+                if (isMob) {
+                    reqFs();
+                    [50, 160, 340, 620, 1000].forEach(function (ms) {
+                        setTimeout(function () { if (!tg.isFullscreen) reqFs(); }, ms);
+                    });
+                } else if (tg.isFullscreen && typeof tg.exitFullscreen === 'function') {
+                    tg.exitFullscreen();
+                }
+            } catch (_) {}
+            try { if (typeof tg.setHeaderColor === 'function') tg.setHeaderColor('#0F172A'); } catch (_) {}
+            try { if (typeof tg.setBackgroundColor === 'function') tg.setBackgroundColor('#090D16'); } catch (_) {}
+            try { if (typeof tg.setBottomBarColor === 'function') tg.setBottomBarColor('#0F172A'); } catch (_) {}
+
+            if (!tg.DeviceStorage) {
+                var prefix = '__tg_device_';
+                tg.DeviceStorage = {
+                    getItem: function (k, cb) {
+                        var v = null;
+                        try { v = localStorage.getItem(prefix + k); } catch (_) {}
+                        if (typeof cb === 'function') setTimeout(function () { cb(null, v); }, 0);
+                        return this;
+                    },
+                    setItem: function (k, v, cb) {
+                        try { localStorage.setItem(prefix + k, String(v)); } catch (_) {}
+                        if (typeof cb === 'function') setTimeout(function () { cb(null, true); }, 0);
+                        return this;
+                    },
+                    removeItem: function (k, cb) {
+                        try { localStorage.removeItem(prefix + k); } catch (_) {}
+                        if (typeof cb === 'function') setTimeout(function () { cb(null, true); }, 0);
+                        return this;
+                    }
+                };
+            }
+        }
+    })();
+
+</script>
+
+    <style>
+
+        @font-face {
+            font-family: "Aviny";
+            src: url("assets/fonts/AVINY.TTF") format("truetype");
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Vazirmatn";
+            src: url("assets/fonts/Vazirmatn-Regular.ttf") format("truetype");
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Vazirmatn";
+            src: url("assets/fonts/Vazirmatn-Bold.ttf") format("truetype");
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        :root {
+            --bg-deep: #090D16;
+            --bg-surface: #0F172A;
+            --surface-card: rgba(17, 24, 39, 0.78);
+            --surface-elevated: rgba(30, 41, 59, 0.68);
+            --surface-stroke: rgba(255, 255, 255, 0.08);
+            --surface-stroke-strong: rgba(255, 255, 255, 0.15);
+
+            --primary: #6366F1;
+            --primary-rgb: 99, 102, 241;
+            --accent: #38BDF8;
+            --accent-rgb: 56, 189, 248;
+
+            --odd-color: #818CF8;
+            --odd-rgb: 129, 140, 248;
+            --odd-bg: rgba(99, 102, 241, 0.14);
+
+            --even-color: #38BDF8;
+            --even-rgb: 56, 189, 248;
+            --even-bg: rgba(14, 165, 233, 0.14);
+
+            --text: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-subtle: #64748B;
+
+            --font-title: "Vazirmatn", system-ui, -apple-system, sans-serif;
+            --font-text: "Vazirmatn", system-ui, -apple-system, sans-serif;
+
+            --azad-safe-top: 0px;
+            --azad-safe-bottom: 0px;
+            --azad-safe-left: 0px;
+            --azad-safe-right: 0px;
+            --azad-content-safe-top: 0px;
+            --azad-content-safe-bottom: 0px;
+            --azad-content-safe-left: 0px;
+            --azad-content-safe-right: 0px;
+        }
+
+        body[data-week-mode="odd"] {
+            --primary: #6366F1;
+            --primary-rgb: 99, 102, 241;
+            --accent: #818CF8;
+            --accent-rgb: 129, 140, 248;
+        }
+        body[data-week-mode="even"] {
+            --primary: #0EA5E9;
+            --primary-rgb: 14, 165, 233;
+            --accent: #38BDF8;
+            --accent-rgb: 56, 189, 248;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-deep);
+            color: var(--text);
+            font-family: var(--font-text);
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            min-height: 100dvh;
+            -webkit-font-smoothing: antialiased;
+            touch-action: pan-y;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        .title-font, .text-font, h1, h2, h3, button, input {
+            font-family: var(--font-text) !important;
+            letter-spacing: 0;
+        }
+
+        ion-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        ion-icon svg, i.fas svg {
+            width: 1em;
+            height: 1em;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            display: block;
+        }
+
+        .aurora-background {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            background: linear-gradient(180deg, #090D16 0%, #0D1322 55%, #090D16 100%);
+            pointer-events: none;
+        }
+        .aurora-grid {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+            mask-image: radial-gradient(circle at 50% 35%, rgba(0, 0, 0, 0.85) 10%, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at 50% 35%, rgba(0, 0, 0, 0.85) 10%, transparent 80%);
+        }
+        .aurora-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(85px);
+            opacity: 0.42;
+            transition: background 0.8s ease;
+        }
+        .aurora-orb-1 {
+            width: 320px;
+            height: 320px;
+            top: -90px;
+            right: -70px;
+            background: rgba(var(--primary-rgb), 0.55);
+            animation: floatAurora 12s ease-in-out infinite alternate;
+        }
+        .aurora-orb-2 {
+            width: 280px;
+            height: 280px;
+            bottom: 8%;
+            left: -80px;
+            background: rgba(var(--accent-rgb), 0.38);
+            animation: floatAurora 15s ease-in-out infinite alternate-reverse;
+        }
+        @keyframes floatAurora {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(18px, 24px, 0) scale(1.08); }
+        }
+
+        .tg-lock-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 12000;
+            background:
+                radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.22), transparent 55%),
+                #090D16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .tg-lock-card {
+            width: 100%;
+            max-width: 380px;
+            background: rgba(17, 24, 39, 0.88);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 28px;
+            padding: 32px 24px 26px;
+            text-align: center;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+        .tg-lock-icon {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 18px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.24), rgba(56, 189, 248, 0.16));
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: #818CF8;
+            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.25);
+        }
+        .tg-lock-title {
+            font-size: 1.22rem;
+            font-weight: 700;
+            margin: 0 0 10px;
+            color: #F8FAFC;
+        }
+        .tg-lock-desc {
+            font-size: 0.88rem;
+            line-height: 1.85;
+            color: var(--text-muted);
+            margin: 0 0 22px;
+        }
+        .tg-lock-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #4F46E5, #0EA5E9);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.94rem;
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
+            transition: transform 0.2s ease;
+        }
+        .tg-lock-btn:active {
+            transform: scale(0.98);
+        }
+
+        .loader-overlay {
+            position: fixed;
+            inset: 0;
+            background: #090D16;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .loader-box {
+            position: relative;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2.5px solid transparent;
+        }
+        .ring:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            border-top-color: var(--primary);
+            border-left-color: var(--primary);
+            animation: spin 1.1s linear infinite;
+        }
+        .ring:nth-child(2) {
+            width: 72%;
+            height: 72%;
+            border-bottom-color: var(--accent);
+            border-right-color: var(--accent);
+            animation: spin 1.4s linear infinite reverse;
+        }
+        .loading-text {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .app-content {
+            position: relative;
+            z-index: 2;
+            max-width: 460px;
+            margin: 0 auto;
+            padding-top: calc(var(--azad-safe-top, var(--tg-safe-area-inset-top, env(safe-area-inset-top, 0px))) + 24px);
+            padding-bottom: calc(116px + var(--azad-safe-bottom, var(--tg-safe-area-inset-bottom, env(safe-area-inset-bottom, 0px))));
+            padding-left: 16px;
+            padding-right: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: opacity 0.35s ease;
+        }
+
+        .glass-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            background: var(--surface-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 14px;
+            border-radius: 22px;
+            border: 1px solid var(--surface-stroke);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+        }
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            min-width: 0;
+            flex: 1;
+        }
+        .avatar-glow {
+            position: relative;
+            width: 46px;
+            height: 46px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 2px;
+            flex-shrink: 0;
+            box-shadow: 0 6px 18px rgba(var(--primary-rgb), 0.32);
+        }
+        .user-avatar-img, .user-avatar-fallback {
+            width: 100%;
+            height: 100%;
+            border-radius: 13px;
+            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #111827;
+            color: #F8FAFC;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        .avatar-status-dot {
+            position: absolute;
+            bottom: -2px;
+            left: -2px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #10B981;
+            border: 2px solid #090D16;
+        }
+        .text-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            gap: 2px;
+        }
+        .user-name {
+            margin: 0;
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .sub-caption {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            direction: rtl;
+            text-align: right;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .header-action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            background: rgba(var(--primary-rgb), 0.12);
+            border: 1px solid rgba(var(--primary-rgb), 0.3);
+            color: var(--primary);
+            font-size: 1.15rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .header-action-btn:active {
+            transform: scale(0.92);
+            background: rgba(var(--primary-rgb), 0.25);
+        }
+        .date-badge {
+            background: rgba(var(--primary-rgb), 0.14);
+            color: #E2E8F0;
+            padding: 8px 12px;
+            border-radius: 14px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            border: 1px solid rgba(var(--primary-rgb), 0.3);
+            white-space: nowrap;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+        .date-badge:active {
+            transform: scale(0.96);
+        }
+
+        .main-card {
+            position: relative;
+            border-radius: 26px;
+            background: linear-gradient(165deg, rgba(30, 41, 59, 0.82) 0%, rgba(15, 23, 42, 0.9) 100%);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            padding: 20px 18px 22px;
+            text-align: center;
+            overflow: hidden;
+            border: 1px solid var(--surface-stroke-strong);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            margin-bottom: 14px;
+        }
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(var(--primary-rgb), 0.28) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-top-pills {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+        .telemetry-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 11px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid var(--surface-stroke);
+            font-size: 0.74rem;
+            color: var(--text-muted);
+        }
+        .telemetry-pill strong {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .card-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .status-icon-box {
+            width: 82px;
+            height: 82px;
+            margin: 0 auto 14px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.2), rgba(var(--accent-rgb), 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.6rem;
+            color: var(--accent);
+            border: 1px solid rgba(var(--primary-rgb), 0.35);
+            box-shadow: 0 12px 28px rgba(var(--primary-rgb), 0.22);
+        }
+        .status-icon-box img {
+            width: 66%;
+            height: 66%;
+            object-fit: contain;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.35;
+            color: #FFFFFF;
+        }
+        .status-desc {
+            color: var(--text-muted);
+            font-size: 0.86rem;
+            margin-top: 6px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .week-range-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 12px;
+            background: rgba(var(--primary-rgb), 0.14);
+            border: 1px solid rgba(var(--primary-rgb), 0.28);
+            color: #E2E8F0;
+            font-size: 0.79rem;
+            font-weight: 700;
+        }
+
+        .term-progress-box {
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid var(--surface-stroke);
+            text-align: right;
+        }
+        .term-progress-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            gap: 8px;
+        }
+        .term-progress-head strong {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.84rem;
+        }
+        .term-progress-track {
+            width: 100%;
+            height: 8px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.07);
+            overflow: hidden;
+        }
+        .term-progress-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .stat-box {
+            background: var(--surface-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 14px 15px;
+            border-radius: 20px;
+            border: 1px solid var(--surface-stroke);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+        }
+        .stat-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: rgba(var(--primary-rgb), 0.14);
+            border: 1px solid rgba(var(--primary-rgb), 0.28);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            flex-shrink: 0;
+        }
+        .stat-info {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+        .stat-label {
+            font-size: 0.74rem;
+            color: var(--text-muted);
+        }
+        .stat-val {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.25;
+            margin-top: 2px;
+        }
+        .stat-sub {
+            font-size: 0.7rem;
+            color: var(--text-subtle);
+            margin-top: 2px;
+        }
+
+        .home-quick-actions {
+            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .subtle-actions-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .subtle-action-btn {
+            background: var(--surface-card);
+            border: 1px solid var(--surface-stroke-strong);
+            color: var(--text);
+            border-radius: 16px;
+            padding: 13px 14px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+            transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .subtle-action-btn.primary-action {
+            width: 100%;
+            background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.2), rgba(var(--accent-rgb), 0.16));
+            border-color: rgba(var(--primary-rgb), 0.5);
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.26);
+        }
+        .subtle-action-btn.primary-action ion-icon {
+            color: #38bdf8;
+            font-size: 1.25rem;
+        }
+        .subtle-action-btn ion-icon {
+            font-size: 1.15rem;
+            color: var(--accent);
+        }
+        .subtle-action-btn:active {
+            transform: scale(0.98);
+        }
+
+        .glass-panel {
+            background: var(--surface-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 20px 18px;
+            border-radius: 24px;
+            border: 1px solid var(--surface-stroke);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+        }
+        .section-title {
+            margin: 0 0 6px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+        }
+        .section-title ion-icon {
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            margin: 0 0 16px;
+            line-height: 1.75;
+        }
+
+        .quick-date-chips {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .quick-chip {
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--surface-stroke);
+            color: var(--text-muted);
+            padding: 10px 12px;
+            border-radius: 14px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+            text-align: center;
+        }
+        .quick-chip ion-icon {
+            font-size: 1.05rem;
+            flex-shrink: 0;
+            color: var(--accent);
+        }
+        .quick-chip:hover, .quick-chip:active {
+            background: rgba(var(--primary-rgb), 0.18);
+            color: #fff;
+            border-color: rgba(var(--primary-rgb), 0.5);
+            transform: translateY(-1px);
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 14px;
+            background: rgba(9, 13, 22, 0.65);
+            border: 1px solid var(--surface-stroke-strong);
+            border-radius: 16px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+        .search-box:active {
+            border-color: var(--primary);
+        }
+        .date-display {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .date-display.placeholder {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            font-weight: 400;
+        }
+        .search-icon {
+            color: var(--accent);
+            font-size: 1.3rem;
+            display: flex;
+        }
+
+        .neon-btn {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 16px;
+            border: none;
+            background: linear-gradient(135deg, var(--primary), #4F46E5);
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 10px 24px rgba(var(--primary-rgb), 0.32);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+        .neon-btn:active {
+            transform: scale(0.98);
+        }
+
+        .result-card {
+            margin-top: 16px;
+            background: rgba(15, 23, 42, 0.78);
+            border-radius: 18px;
+            padding: 16px;
+            border: 1px solid var(--surface-stroke-strong);
+            animation: fadeUp 0.28s ease forwards;
+        }
+        .res-status-banner {
+            text-align: center;
+            padding: 12px;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--surface-stroke);
+        }
+        .res-status-banner span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+        .res-status-banner strong {
+            font-size: 1.45rem;
+            font-weight: 700;
+        }
+        .res-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px 4px;
+            border-bottom: 1px solid var(--surface-stroke);
+            font-size: 0.85rem;
+        }
+        .res-item:last-child {
+            border-bottom: none;
+            padding-bottom: 2px;
+        }
+        .res-item span {
+            color: var(--text-muted);
+        }
+
+        .list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 0 4px;
+        }
+        .badge-count {
+            background: rgba(var(--primary-rgb), 0.15);
+            color: #E2E8F0;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            border: 1px solid rgba(var(--primary-rgb), 0.3);
+        }
+        .filter-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 14px;
+            background: rgba(15, 23, 42, 0.75);
+            padding: 5px;
+            border-radius: 16px;
+            border: 1px solid var(--surface-stroke);
+        }
+        .filter-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+        .filter-btn.active {
+            background: rgba(var(--primary-rgb), 0.24);
+            color: #fff;
+            box-shadow: inset 0 0 0 1px rgba(var(--primary-rgb), 0.45);
+        }
+
+        .weeks-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .week-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--surface-card);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 14px 16px;
+            border-radius: 18px;
+            border: 1px solid var(--surface-stroke);
+            transition: 0.2s ease;
+            cursor: pointer;
+        }
+        .week-row:active {
+            transform: scale(0.985);
+        }
+        .week-row.current {
+            background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.22), rgba(17, 24, 39, 0.9));
+            border-color: rgba(var(--primary-rgb), 0.55);
+            box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.18);
+        }
+        .week-badge-pill {
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            border: 1px solid var(--surface-stroke);
+            white-space: nowrap;
+        }
+
+        .bottom-sheet-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 8, 17, 0.72);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 5000;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.28s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .bottom-sheet-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .bottom-sheet {
+            width: 100%;
+            max-width: 460px;
+            background: #111827;
+            border-radius: 28px 28px 0 0;
+            padding: 16px 20px calc(28px + max(var(--azad-safe-bottom), var(--azad-content-safe-bottom)));
+            transform: translateY(100%);
+            transition: 0.34s cubic-bezier(0.19, 1, 0.22, 1);
+            box-shadow: 0 -14px 44px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            border: 1px solid var(--surface-stroke-strong);
+            border-bottom: none;
+        }
+        .bottom-sheet-overlay.show .bottom-sheet {
+            transform: translateY(0);
+        }
+        .sheet-handle {
+            width: 44px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin: 0 auto 16px;
+        }
+        .sheet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+        .close-btn {
+            background: rgba(255, 255, 255, 0.06);
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--surface-stroke);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .custom-calendar-container {
+            width: 100%;
+            user-select: none;
+        }
+        .cal-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .cal-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--surface-stroke);
+            color: #fff;
+            border-radius: 12px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .cal-header-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .cal-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+        .cal-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .cal-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--surface-stroke);
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.16s ease;
+        }
+        .cal-day.selected {
+            background: var(--primary);
+            box-shadow: 0 4px 14px rgba(var(--primary-rgb), 0.5);
+            border-color: rgba(255, 255, 255, 0.45);
+            color: #fff;
+        }
+        .cal-day.today {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .cal-day.selected.today {
+            color: #fff;
+        }
+        .cal-day.empty {
+            background: transparent;
+            border: none;
+            cursor: default;
+        }
+
+        .cyber-nav {
+            position: fixed;
+            bottom: 18px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: calc(100% - 32px);
+            max-width: 428px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(22px) saturate(180%);
+            -webkit-backdrop-filter: blur(22px) saturate(180%);
+            border-radius: 22px;
+            border: 1px solid var(--surface-stroke-strong);
+            box-shadow: 0 16px 38px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            padding: 6px;
+            height: 68px;
+            z-index: 999;
+            overflow: hidden;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .nav-item {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            height: 54px;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            transition: 0.2s ease;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 0;
+        }
+        .nav-item ion-icon {
+            font-size: 1.3rem;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .nav-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .nav-item.active {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        .nav-item.active ion-icon {
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
+        .nav-settings {
+            color: var(--accent);
+        }
+        .nav-blob {
+            position: absolute;
+            top: 11px;
+            width: 48px;
+            height: 46px;
+            background: var(--primary);
+            border-radius: 16px;
+            filter: blur(22px);
+            opacity: 0.42;
+            transition: right 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hidden { display: none !important; }
+        .view { display: none; }
+        .view.active-view {
+            display: block;
+            animation: fadeUp 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        body.azad-shake-pulse .main-card, .main-card.azad-shake-pulse {
+            animation: shakePulse 0.55s ease both;
+        }
+        .week-row.azad-focus {
+            animation: weekFocus 0.9s ease both;
+        }
+        @keyframes shakePulse {
+            0%, 100% { transform: scale(1); }
+            25% { transform: translateX(-4px) scale(1.012); }
+            55% { transform: translateX(4px) scale(1.012); }
+        }
+        @keyframes weekFocus {
+            0%, 100% { transform: scale(1); }
+            45% { transform: scale(1.02); box-shadow: 0 0 24px rgba(var(--accent-rgb), 0.35); }
+        }
+
+        body.tg-mobile-fullscreen {
+            min-height: 100dvh;
+            padding-left: max(var(--azad-safe-left, 0px), var(--azad-content-safe-left, 0px));
+            padding-right: max(var(--azad-safe-right, 0px), var(--azad-content-safe-right, 0px));
+        }
+        body.tg-mobile-fullscreen .app-content {
+            min-height: 100dvh;
+            padding-top: calc(24px + max(var(--azad-safe-top, 0px), var(--azad-content-safe-top, 0px), var(--tg-safe-area-inset-top, 0px), env(safe-area-inset-top, 0px)));
+            padding-bottom: calc(116px + max(var(--azad-safe-bottom, 0px), var(--azad-content-safe-bottom, 0px), var(--tg-safe-area-inset-bottom, 0px), env(safe-area-inset-bottom, 0px)));
+        }
+        body.tg-mobile-fullscreen .cyber-nav {
+            bottom: calc(16px + max(var(--azad-safe-bottom, 0px), var(--azad-content-safe-bottom, 0px)));
+        }
+
+        html.aw-sheet-open,
+        body.aw-sheet-open {
+            overflow: hidden !important;
+            overscroll-behavior: contain !important;
+        }
+        body.aw-sheet-open .app-content {
+            pointer-events: none !important;
+        }
+        body.aw-sheet-open .bottom-sheet-overlay {
+            pointer-events: auto !important;
+        }
+    </style>
+</head>
+<body data-week-mode="default">
+
+    <div class="aurora-background">
+        <div class="aurora-orb aurora-orb-1"></div>
+        <div class="aurora-orb aurora-orb-2"></div>
+        <div class="aurora-grid"></div>
+    </div>
+
+    <div id="telegramLockOverlay" class="tg-lock-overlay hidden">
+        <div class="tg-lock-card">
+            <div class="tg-lock-icon">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+            </div>
+            <h1 class="tg-lock-title">این برنامه فقط در تلگرام باز می‌شود</h1>
+            <p class="tg-lock-desc">
+                برای دیدن وضعیت زوج یا فرد بودن این هفته، بررسی تاریخ امتحانات و مشاهده تقویم کامل ترم، وارد ربات تلگرام آزادویک شوید.
+            </p>
+            <a id="tgLockBotLink" href="https://t.me/AzadWeekBot" class="tg-lock-btn">
+                <ion-icon name="paper-plane-outline"></ion-icon>
+                <span>ورود به ربات آزادویک در تلگرام</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="loader" class="loader-overlay">
+        <div class="loader-box">
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <span class="loading-text">در حال بارگذاری تقویم آموزشی...</span>
+    </div>
+
+    <div id="calendar-modal" class="bottom-sheet-overlay" onclick="closeCalendar(event)">
+        <div class="bottom-sheet" onclick="event.stopPropagation()">
+            <div class="sheet-handle"></div>
+            <div class="sheet-header">
+                <span>انتخاب تاریخ از تقویم شمسی</span>
+                <button class="close-btn" type="button" onclick="closeCalendar()"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="cal-wrapper">
+                <div id="custom-datepicker" class="custom-calendar-container">
+                    <div class="cal-nav">
+                        <button class="cal-btn" type="button" onclick="changeMonth(-1)"><i class="fas fa-chevron-right"></i></button>
+                        <span class="cal-header-title" id="calMonthYear">...</span>
+                        <button class="cal-btn" type="button" onclick="changeMonth(1)"><i class="fas fa-chevron-left"></i></button>
+                    </div>
+                    <div class="cal-weekdays">
+                        <span>ش</span><span>ی</span><span>د</span><span>س</span><span>چ</span><span>پ</span><span>ج</span>
+                    </div>
+                    <div class="cal-grid" id="calGrid"></div>
+                </div>
+            </div>
+
+            <button class="neon-btn" type="button" onclick="confirmDate()">
+                <span>تأیید و مشاهده وضعیت این روز</span>
+            </button>
+        </div>
+    </div>
+
+    <main class="app-content" id="mainApp" style="opacity: 0;">
+        <header class="glass-header">
+            <div class="user-profile">
+                <div class="avatar-glow">
+                    <img id="userAvatarImg" class="user-avatar-img hidden" src="" alt="پروفایل کاربر">
+                    <div id="userAvatarFallback" class="user-avatar-fallback">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </div>
+                    <span class="avatar-status-dot"></span>
+                </div>
+                <div class="text-group">
+                    <h1 class="user-name" id="userName">دانشجوی گرامی</h1>
+                    <span class="sub-caption" id="userHandle">تقویم آموزشی دانشگاه آزاد</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="date-badge" id="headerDate" title="مشاهده وضعیت امروز" onclick="quickPickDate('today')">امروز</div>
+            </div>
+        </header>
+
+        <div class="views-wrapper">
+
+            <section id="view-home" class="view active-view">
+                <div class="main-card">
+                    <div class="hero-top-pills">
+                        <span class="telemetry-pill" id="heroTermRange">تقویم ترم جاری</span>
+                        <span class="telemetry-pill" id="heroNextWeekPill">هفته آینده: <strong>---</strong></span>
+                    </div>
+                    <div class="card-inner">
+                        <div class="status-icon-box">
+                            <ion-icon id="statusIconIonic" name="sync-outline"></ion-icon>
+                            <img id="statusIconImage" src="" alt="وضعیت هفته" class="hidden">
+                        </div>
+                        <h2 id="statusTitle" class="main-title">در حال بارگذاری...</h2>
+                        <p id="statusDesc" class="status-desc">وضعیت برگزاری کلاس‌ها در این هفته</p>
+
+                        <div id="currentWeekRangeBadge" class="week-range-badge">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            <span id="currentWeekRangeText">بازه این هفته: ---</span>
+                        </div>
+
+                        <div class="term-progress-box">
+                            <div class="term-progress-head">
+                                <span id="termProgressLabel">پیشرفت ترم آموزشی</span>
+                                <strong id="termProgressPct">۰٪</strong>
+                            </div>
+                            <div class="term-progress-track">
+                                <div class="term-progress-fill" id="termProgressFill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-icon"><ion-icon name="layers-outline"></ion-icon></div>
+                        <div class="stat-info">
+                            <span class="stat-label">هفته فعلی ترم</span>
+                            <span class="stat-val" id="currentWeekNum">۰</span>
+                            <span class="stat-sub" id="currentWeekSub">از ۱۷ هفته آموزشی</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><ion-icon name="hourglass-outline"></ion-icon></div>
+                        <div class="stat-info">
+                            <span class="stat-label">مانده تا پایان ترم</span>
+                            <span class="stat-val" id="daysLeft">۰</span>
+                            <span class="stat-sub" id="daysLeftSub">روز تا پایان کلاس‌ها</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="home-quick-actions">
+                    <button type="button" class="subtle-action-btn primary-action" onclick="window.AzadWeekNative && window.AzadWeekNative.shareVisualCard ? window.AzadWeekNative.shareVisualCard() : null">
+                        <ion-icon name="share-social-outline"></ion-icon>
+                        <span>اشتراک و ارسال تصویر وضعیت</span>
+                    </button>
+                    <div class="subtle-actions-row">
+                        <button type="button" class="subtle-action-btn" onclick="window.AzadWeekNative && window.AzadWeekNative.showWrappedTerm ? window.AzadWeekNative.showWrappedTerm() : null">
+                            <ion-icon name="pie-chart-outline"></ion-icon>
+                            <span>خلاصه وضعیت ترم</span>
+                        </button>
+                        <button type="button" class="subtle-action-btn" onclick="switchView('list', 2)">
+                            <ion-icon name="list-outline"></ion-icon>
+                            <span>جدول کامل ترم</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="view-search" class="view">
+                <div class="glass-panel">
+                    <h2 class="section-title"><ion-icon name="calendar-outline"></ion-icon> بررسی وضعیت هر تاریخ</h2>
+                    <p class="section-desc">می‌خواهید بدانید روز امتحان، کوییز یا یکی از هفته‌های آینده زوج است یا فرد؟ تاریخ مورد نظرتان را انتخاب کنید:</p>
+
+                    <div class="quick-date-chips">
+                        <button type="button" class="quick-chip" onclick="quickPickDate('today')">
+                            <ion-icon name="today-outline"></ion-icon> امروز
+                        </button>
+                        <button type="button" class="quick-chip" onclick="quickPickDate('tomorrow')">
+                            <ion-icon name="sunny-outline"></ion-icon> فردا
+                        </button>
+                        <button type="button" class="quick-chip" onclick="quickPickDate('next_sat')">
+                            <ion-icon name="calendar-clear-outline"></ion-icon> شنبه هفته بعد
+                        </button>
+                        <button type="button" class="quick-chip" onclick="quickPickDate('next_week')">
+                            <ion-icon name="arrow-forward-circle-outline"></ion-icon> ۷ روز دیگر
+                        </button>
+                    </div>
+
+                    <div class="search-box" onclick="openCalendar()">
+                        <input type="hidden" id="dateInput">
+                        <span id="dateDisplay" class="date-display placeholder">انتخاب تاریخ از تقویم شمسی</span>
+                        <span class="search-icon"><ion-icon name="calendar-number-outline"></ion-icon></span>
+                    </div>
+
+                    <button class="neon-btn" type="button" onclick="checkDate()">
+                        <span>مشاهده وضعیت این تاریخ</span>
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+
+                    <div id="resultCard" class="result-card hidden">
+                        <div class="res-status-banner">
+                            <span>وضعیت کلاس‌ها در این روز</span>
+                            <strong id="resStatus">---</strong>
+                        </div>
+                        <div class="res-item">
+                            <span>تاریخ انتخاب‌شده</span>
+                            <strong id="resDate">---</strong>
+                        </div>
+                        <div class="res-item">
+                            <span>روز هفته</span>
+                            <strong id="resDay">---</strong>
+                        </div>
+                        <div class="res-item hidden" id="resWeekRow">
+                            <span>شماره هفته در ترم</span>
+                            <strong id="resWeekNum">---</strong>
+                        </div>
+                        <div class="res-item hidden" id="resRangeRow">
+                            <span>بازه آن هفته</span>
+                            <strong id="resWeekRange">---</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="view-list" class="view">
+                <div class="list-header">
+                    <h2 class="section-title" style="margin:0;"><ion-icon name="list-outline"></ion-icon> جدول هفته‌های ترم</h2>
+                    <span class="badge-count" id="termTotalBadge">۱۷ هفته آموزشی</span>
+                </div>
+
+                <div class="filter-bar">
+                    <button type="button" class="filter-btn active" data-filter="all" onclick="filterWeekList('all', this)">همه هفته‌ها</button>
+                    <button type="button" class="filter-btn" data-filter="فرد" onclick="filterWeekList('فرد', this)">هفته‌های فرد</button>
+                    <button type="button" class="filter-btn" data-filter="زوج" onclick="filterWeekList('زوج', this)">هفته‌های زوج</button>
+                </div>
+
+                <div id="weekList" class="weeks-list"></div>
+            </section>
+        </div>
+    </main>
+
+    <nav class="cyber-nav" id="bottomNav">
+        <button class="nav-item active" type="button" onclick="switchView('home', 0)">
+            <ion-icon name="home-outline"></ion-icon>
+            <span class="nav-label">امروز</span>
+        </button>
+        <button class="nav-item" type="button" onclick="switchView('search', 1)">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <span class="nav-label">جستجوی تاریخ</span>
+        </button>
+        <button class="nav-item" type="button" onclick="switchView('list', 2)">
+            <ion-icon name="list-outline"></ion-icon>
+            <span class="nav-label">جدول ترم</span>
+        </button>
+        <button class="nav-item nav-settings" type="button" onclick="window.AzadWeekNative && window.AzadWeekNative.openSettingsMenu ? window.AzadWeekNative.openSettingsMenu() : null" title="امکانات">
+            <ion-icon name="options-outline"></ion-icon>
+            <span class="nav-label">امکانات</span>
+        </button>
+        <div class="nav-blob"></div>
+    </nav>
+
+    <script>
+        const AZAD_ICONS = {
+            'home-outline': '<path d="M3 10.5L12 3l9 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-4.5v-6h-6v6H4.5A1.5 1.5 0 0 1 3 19.5v-9z"/>',
+            'calendar-outline': '<rect x="3" y="4" width="18" height="17" rx="3"/><path d="M16 2v4M8 2v4M3 9h18"/>',
+            'calendar-clear-outline': '<rect x="3" y="4" width="18" height="17" rx="3"/><path d="M16 2v4M8 2v4M3 9h18"/>',
+            'calendar-number-outline': '<rect x="3" y="4" width="18" height="17" rx="3"/><path d="M16 2v4M8 2v4M3 9h18M10 13h4m-2-2v6"/>',
+            'list-outline': '<path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/>',
+            'options-outline': '<path d="M4 7h9m4 0h3M15 7a2 2 0 1 0 0 .01M4 17h3m4 0h9M9 17a2 2 0 1 0 0 .01M4 12h16"/>',
+            'lock-closed-outline': '<rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+            'paper-plane-outline': '<path d="M21 3L3 10.5l7.5 3L14 21l7-18zM10.5 13.5L21 3"/>',
+            'sync-outline': '<path d="M20 11a8.1 8.1 0 0 0-15.5-2m-.5-4v4h4M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"/>',
+            'flash-outline': '<path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/>',
+            'infinite-outline': '<path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/>',
+            'moon-outline': '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
+            'layers-outline': '<path d="M12 3L2 8l10 5 10-5-10-5zM2 12l10 5 10-5M2 16l10 5 10-5"/>',
+            'hourglass-outline': '<path d="M6 3h12M6 21h12M7 3v3.5a5 5 0 0 0 2.5 4.33L12 12l-2.5 1.17A5 5 0 0 0 7 17.5V21m10-18v3.5a5 5 0 0 1-2.5 4.33L12 12l2.5 1.17A5 5 0 0 1 17 17.5V21"/>',
+            'today-outline': '<rect x="3" y="4" width="18" height="17" rx="3"/><path d="M16 2v4M8 2v4M3 9h18"/><circle cx="12" cy="15" r="2"/>',
+            'sunny-outline': '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/>',
+            'arrow-forward-circle-outline': '<circle cx="12" cy="12" r="9"/><path d="M12 8l-4 4 4 4m4-4H8"/>',
+            'search-outline': '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/>',
+            'share-social-outline': '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/>',
+            'download-outline': '<path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>',
+            'sparkles-outline': '<path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3zM5 17l.9 2.1L8 20l-2.1.9L5 23l-.9-2.1L2 20l2.1-.9L5 17z"/>',
+            'send-outline': '<path d="M21 3L3 10.5l7.5 3L14 21l7-18z"/>',
+            'image-outline': '<rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5L5 20"/>',
+            'pie-chart-outline': '<path d="M10 3.2A9 9 0 1 0 20.8 14H10V3.2z"/><path d="M14 2.2A9 9 0 0 1 21.8 10H14V2.2z"/>',
+            'person-circle-outline': '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="9.5" r="3"/><path d="M6.5 18.2a6.5 6.5 0 0 1 11 0"/>',
+            'analytics-outline': '<path d="M4 19h16M7 15v-4m5 4V7m5 8v-6"/>',
+            'phone-portrait-outline': '<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/>',
+            'notifications-outline': '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/>',
+            'phone-landscape-outline': '<rect x="2.5" y="6" width="19" height="12" rx="2.5"/><path d="M18.5 10.5v3"/>',
+            'trash-outline': '<path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6h14z"/>',
+            'refresh-outline': '<path d="M20 11a8.1 8.1 0 0 0-15.5-2m-.5-4v4h4M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"/>',
+            'chevron-back-outline': '<path d="M15 18l-6-6 6-6"/>',
+            'fa-times': '<path d="M18 6L6 18M6 6l12 12"/>',
+            'fa-chevron-right': '<path d="M9 18l6-6-6-6"/>',
+            'fa-chevron-left': '<path d="M15 18l-6-6 6-6"/>'
+        };
+
+        function renderIconsIn(root) {
+            const scope = root || document;
+            scope.querySelectorAll('ion-icon').forEach(el => {
+                const name = el.getAttribute('name') || '';
+                if (AZAD_ICONS[name] && el.dataset.renderedIcon !== name) {
+                    el.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true">${AZAD_ICONS[name]}</svg>`;
+                    el.dataset.renderedIcon = name;
+                }
+            });
+            scope.querySelectorAll('i.fas').forEach(el => {
+                if (el.dataset.renderedIcon) return;
+                const cls = Array.from(el.classList).find(c => AZAD_ICONS[c]);
+                if (cls) {
+                    el.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true">${AZAD_ICONS[cls]}</svg>`;
+                    el.dataset.renderedIcon = cls;
+                }
+            });
+        }
+        window.AzadWeekRenderIcons = renderIconsIn;
+
+        const JALALI_MONTHS = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'];
+        const JALALI_WEEKDAYS = ['یکشنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنجشنبه', 'جمعه', 'شنبه'];
+
+        const TERM_WEEKS_CONFIG = [
+            { id: 1, status: 'هفته فرد', start: '1405/06/21', end: '1405/06/27' },
+            { id: 2, status: 'هفته زوج', start: '1405/06/28', end: '1405/07/03' },
+            { id: 3, status: 'هفته فرد', start: '1405/07/04', end: '1405/07/10' },
+            { id: 4, status: 'هفته زوج', start: '1405/07/11', end: '1405/07/17' },
+            { id: 5, status: 'هفته فرد', start: '1405/07/18', end: '1405/07/24' },
+            { id: 6, status: 'هفته زوج', start: '1405/07/25', end: '1405/08/01' },
+            { id: 7, status: 'هفته فرد', start: '1405/08/02', end: '1405/08/08' },
+            { id: 8, status: 'هفته زوج', start: '1405/08/09', end: '1405/08/15' },
+            { id: 9, status: 'هفته فرد', start: '1405/08/16', end: '1405/08/22' },
+            { id: 10, status: 'هفته زوج', start: '1405/08/23', end: '1405/08/29' },
+            { id: 11, status: 'هفته فرد', start: '1405/08/30', end: '1405/09/06' },
+            { id: 12, status: 'هفته زوج', start: '1405/09/07', end: '1405/09/13' },
+            { id: 13, status: 'هفته فرد', start: '1405/09/14', end: '1405/09/20' },
+            { id: 14, status: 'هفته زوج', start: '1405/09/21', end: '1405/09/27' },
+            { id: 15, status: 'هفته فرد', start: '1405/09/28', end: '1405/10/04' },
+            { id: 16, status: 'هفته زوج', start: '1405/10/05', end: '1405/10/11' },
+            { id: 17, status: 'هفته فرد', start: '1405/10/12', end: '1405/10/17' }
+        ];
+
+        function gregorianToJalali(gy, gm, gd) {
+            const g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+            const gy2 = (gm > 2) ? (gy + 1) : gy;
+            let days = 355666 + (365 * gy) + Math.floor((gy2 + 3) / 4) - Math.floor((gy2 + 99) / 100) + Math.floor((gy2 + 399) / 400) + gd + g_d_m[gm - 1];
+            let jy = -1595 + (33 * Math.floor(days / 12053));
+            days %= 12053;
+            jy += 4 * Math.floor(days / 1461);
+            days %= 1461;
+            if (days > 365) {
+                jy += Math.floor((days - 1) / 365);
+                days = (days - 1) % 365;
+            }
+            const jm = (days < 186) ? 1 + Math.floor(days / 31) : 7 + Math.floor((days - 186) / 30);
+            const jd = 1 + ((days < 186) ? (days % 31) : ((days - 186) % 30));
+            return [jy, jm, jd];
+        }
+
+        function jalaliToGregorian(jy, jm, jd) {
+            jy += 1595;
+            let days = -355668 + (365 * jy) + (Math.floor(jy / 33) * 8) + Math.floor(((jy % 33) + 3) / 4) + jd + ((jm < 7) ? (jm - 1) * 31 : ((jm - 7) * 30) + 186);
+            let gy = 400 * Math.floor(days / 146097);
+            days %= 146097;
+            if (days > 36524) {
+                gy += 100 * Math.floor(--days / 36524);
+                days %= 36524;
+                if (days >= 365) days++;
+            }
+            gy += 4 * Math.floor(days / 1461);
+            days %= 1461;
+            if (days > 365) {
+                gy += Math.floor((days - 1) / 365);
+                days = (days - 1) % 365;
+            }
+            let gd = days + 1;
+            const sal_a = [0, 31, ((gy % 4 === 0 && gy % 100 !== 0) || (gy % 400 === 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            let gm;
+            for (gm = 0; gm < 13 && gd > sal_a[gm]; gm++) gd -= sal_a[gm];
+            return [gy, gm, gd];
+        }
+
+        function isJalaliLeap(jy) {
+            return ((((jy + 12) % 33) % 4) === 1);
+        }
+
+        function jalaliMonthLength(jy, jm) {
+            if (jm <= 6) return 31;
+            if (jm <= 11) return 30;
+            return isJalaliLeap(jy) ? 30 : 29;
+        }
+
+        function getTehranDateObj(offsetDays = 0) {
+            const now = new Date(Date.now() + offsetDays * 86400000);
+            try {
+                const parts = new Intl.DateTimeFormat('en-US', {
+                    timeZone: 'Asia/Tehran',
+                    year: 'numeric',
+                    month: 'numeric',
+                    day: 'numeric'
+                }).formatToParts(now);
+                const gy = Number(parts.find(p => p.type === 'year').value);
+                const gm = Number(parts.find(p => p.type === 'month').value);
+                const gd = Number(parts.find(p => p.type === 'day').value);
+                return new Date(Date.UTC(gy, gm - 1, gd, 12, 0, 0));
+            } catch (_) {
+                return new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0, 0));
+            }
+        }
+
+        function formatJalaliYMD(jy, jm, jd) {
+            return `${jy}/${String(jm).padStart(2, '0')}/${String(jd).padStart(2, '0')}`;
+        }
+
+        function parseJalaliYMD(str) {
+            const norm = normalizeJalaliDateInput(str);
+            if (!norm) return null;
+            const [y, m, d] = norm.split('/').map(Number);
+            return { jy: y, jm: m, jd: d };
+        }
+
+        function jalaliToUTCDate(jy, jm, jd) {
+            const [gy, gm, gd] = jalaliToGregorian(jy, jm, jd);
+            return new Date(Date.UTC(gy, gm - 1, gd, 12, 0, 0));
+        }
+
+        function getJalaliWeekdayIndexSatZero(jy, jm, jd) {
+            const d = jalaliToUTCDate(jy, jm, jd);
+            return (d.getUTCDay() + 1) % 7;
+        }
+
+        function getJalaliWeekdayName(jy, jm, jd) {
+            const d = jalaliToUTCDate(jy, jm, jd);
+            return JALALI_WEEKDAYS[d.getUTCDay()];
+        }
+
+        function getTodayJalaliInfo(offsetDays = 0) {
+            const dt = getTehranDateObj(offsetDays);
+            const [jy, jm, jd] = gregorianToJalali(dt.getUTCFullYear(), dt.getUTCMonth() + 1, dt.getUTCDate());
+            return {
+                jy, jm, jd,
+                ymd: formatJalaliYMD(jy, jm, jd),
+                dayName: JALALI_WEEKDAYS[dt.getUTCDay()],
+                satZeroWeekday: (dt.getUTCDay() + 1) % 7
+            };
+        }
+
+        function toFaDigits(val) {
+            return String(val == null ? '' : val).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[Number(d)]);
+        }
+
+        function formatReadableJalaliDate(ymd, includeYear = true) {
+            const p = parseJalaliYMD(ymd);
+            if (!p) return toFaDigits(ymd || '');
+            const mName = JALALI_MONTHS[p.jm - 1] || '';
+            return `${toFaDigits(p.jd)} ${mName}${includeYear ? ' ' + toFaDigits(p.jy) : ''}`;
+        }
+
+        function formatReadableJalaliRange(startYmd, endYmd) {
+            const s = parseJalaliYMD(startYmd);
+            const e = parseJalaliYMD(endYmd);
+            if (!s || !e) return `${toFaDigits(startYmd)} تا ${toFaDigits(endYmd)}`;
+            const sMonth = JALALI_MONTHS[s.jm - 1] || '';
+            const eMonth = JALALI_MONTHS[e.jm - 1] || '';
+            if (s.jm === e.jm && s.jy === e.jy) {
+                return `${toFaDigits(s.jd)} تا ${toFaDigits(e.jd)} ${eMonth} ${toFaDigits(e.jy)}`;
+            }
+            return `${toFaDigits(s.jd)} ${sMonth} تا ${toFaDigits(e.jd)} ${eMonth} ${toFaDigits(e.jy)}`;
+        }
+
+        function daysBetweenJalali(ymdFrom, ymdTo) {
+            const a = parseJalaliYMD(ymdFrom);
+            const b = parseJalaliYMD(ymdTo);
+            if (!a || !b) return 0;
+            const msA = jalaliToUTCDate(a.jy, a.jm, a.jd).getTime();
+            const msB = jalaliToUTCDate(b.jy, b.jm, b.jd).getTime();
+            return Math.round((msB - msA) / 86400000);
+        }
+
+        function buildLocalInitPayload() {
+            const todayInfo = getTodayJalaliInfo(0);
+            const today = todayInfo.ymd;
+            const weeks = TERM_WEEKS_CONFIG.map(w => ({
+                id: w.id,
+                start: w.start,
+                end: w.end,
+                status: w.status,
+                is_current: today >= w.start && today <= w.end
+            }));
+            const current = weeks.find(w => w.is_current) || null;
+            const next = weeks.find(w => w.start > today) || null;
+            const termStart = weeks[0];
+            const termEnd = weeks[weeks.length - 1];
+
+            const totalDays = Math.max(1, daysBetweenJalali(termStart.start, termEnd.end) + 1);
+            let elapsedDays = 0;
+            if (today < termStart.start) elapsedDays = 0;
+            else if (today > termEnd.end) elapsedDays = totalDays;
+            else elapsedDays = Math.max(1, daysBetweenJalali(termStart.start, today) + 1);
+
+            const progressPercent = today < termStart.start ? 0 : (today > termEnd.end ? 100 : Math.min(100, Math.round((elapsedDays / totalDays) * 100)));
+            const daysToEnd = current ? Math.max(0, daysBetweenJalali(today, termEnd.end)) : 0;
+
+            return {
+                status: 'success',
+                today: today,
+                today_day: todayInfo.dayName,
+                today_status: current ? current.status : 'خارج از بازه ترم',
+                weeks: weeks,
+                current_week: current ? {
+                    id: current.id,
+                    start: current.start,
+                    end: current.end,
+                    status: current.status,
+                    days_to_end: Math.max(0, daysBetweenJalali(today, current.end))
+                } : null,
+                next_week: next ? {
+                    id: next.id,
+                    start: next.start,
+                    status: next.status
+                } : null,
+                term: {
+                    start: termStart.start,
+                    end: termEnd.end,
+                    total_weeks: weeks.length,
+                    days_to_end: daysToEnd,
+                    progress_percent: progressPercent
+                }
+            };
+        }
+
+        function buildLocalCheckResult(ymd) {
+            const p = parseJalaliYMD(ymd);
+            if (!p) return null;
+            const found = TERM_WEEKS_CONFIG.find(w => ymd >= w.start && ymd <= w.end) || null;
+            return {
+                status: 'success',
+                date: ymd,
+                day: getJalaliWeekdayName(p.jy, p.jm, p.jd),
+                week_status: found ? found.status : 'خارج از بازه ترم',
+                week_number: found ? found.id : null,
+                week_start: found ? found.start : null,
+                week_end: found ? found.end : null
+            };
+        }
+
+        const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+        const API_URL = 'connect.php';
+        let activeTabIndex = 0;
+        let cachedWeeksData = [];
+
+        function isTelegramAccessAllowed() {
+            if (!tg) return false;
+            const hasInitData = typeof tg.initData === 'string' && tg.initData.trim().length > 0;
+            const hasUser = !!(tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.id);
+            const platform = String(tg.platform || 'unknown').toLowerCase();
+            const isKnownTelegramPlatform = ['android', 'android_x', 'ios', 'tdesktop', 'macos', 'weba', 'webk', 'unigram'].includes(platform);
+            const hasNativeBridge = !!(window.TelegramWebviewProxy || window.TelegramWebview || (window.external && window.external.notify));
+            return (hasInitData && hasUser) || isKnownTelegramPlatform || hasNativeBridge;
+        }
+        window.isTelegramAccessAllowed = isTelegramAccessAllowed;
+
+        function showTelegramLockScreen(botUrl) {
+            const lockEl = document.getElementById('telegramLockOverlay');
+            const linkEl = document.getElementById('tgLockBotLink');
+            const loaderEl = document.getElementById('loader');
+            const mainEl = document.getElementById('mainApp');
+            const navEl = document.getElementById('bottomNav');
+            if (botUrl && linkEl) linkEl.href = botUrl;
+            if (loaderEl) loaderEl.style.display = 'none';
+            if (mainEl) mainEl.style.display = 'none';
+            if (navEl) navEl.style.display = 'none';
+            if (lockEl) {
+                lockEl.classList.remove('hidden');
+                renderIconsIn(lockEl);
+            }
+        }
+
+        function getInitials(firstName, lastName, username) {
+            const f = String(firstName || '').trim();
+            const l = String(lastName || '').trim();
+            if (f && l) return Array.from(f)[0] + '‌' + Array.from(l)[0];
+            if (f) return Array.from(f).slice(0, 2).join('');
+            if (username) return String(username).slice(0, 2).toUpperCase();
+            return 'آ';
+        }
+
+        function renderUserProfile(userObj, proxyAvatarUrl) {
+            const unsafeUser = (tg && tg.initDataUnsafe && tg.initDataUnsafe.user) ? tg.initDataUnsafe.user : {};
+            const user = Object.assign({}, unsafeUser, userObj || {});
+            const firstName = String(user.first_name || '').trim();
+            const lastName = String(user.last_name || '').trim();
+            const fullName = [firstName, lastName].filter(Boolean).join(' ') || 'دانشجوی گرامی';
+            const username = String(user.username || '').trim();
+
+            const nameEl = document.getElementById('userName');
+            const handleEl = document.getElementById('userHandle');
+            const imgEl = document.getElementById('userAvatarImg');
+            const fallbackEl = document.getElementById('userAvatarFallback');
+
+            if (nameEl) nameEl.textContent = fullName;
+            if (handleEl) {
+                handleEl.textContent = username ? `@${username}` : 'تقویم آموزشی دانشگاه آزاد';
+                handleEl.style.direction = username ? 'ltr' : 'rtl';
+                handleEl.style.textAlign = 'right';
+            }
+
+            if (fallbackEl) {
+                fallbackEl.textContent = getInitials(firstName, lastName, username);
+            }
+
+            const candidateUrls = [
+                user.photo_url ? String(user.photo_url).trim() : '',
+                proxyAvatarUrl ? String(proxyAvatarUrl).trim() : '',
+                user.avatar_proxy_url ? String(user.avatar_proxy_url).trim() : ''
+            ].filter(Boolean);
+
+            if (imgEl && candidateUrls.length > 0) {
+                let idx = 0;
+                const tryLoad = () => {
+                    if (idx >= candidateUrls.length) {
+                        imgEl.classList.add('hidden');
+                        if (fallbackEl) fallbackEl.classList.remove('hidden');
+                        return;
+                    }
+                    const currentUrl = candidateUrls[idx++];
+                    imgEl.onload = () => {
+                        imgEl.classList.remove('hidden');
+                        if (fallbackEl) fallbackEl.classList.add('hidden');
+                    };
+                    imgEl.onerror = tryLoad;
+                    imgEl.src = currentUrl;
+                };
+                tryLoad();
+            }
+        }
+
+        let initialToday = getTodayJalaliInfo(0);
+        let currentCalendarYear = initialToday.jy;
+        let currentCalendarMonth = initialToday.jm;
+        let globalSelectedDate = initialToday.ymd;
+
+        function normalizeJalaliDateInput(raw) {
+            const fa = '۰۱۲۳۴۵۶۷۸۹';
+            const ar = '٠١٢٣٤٥٦٧٨٩';
+            let val = String(raw || '').trim();
+            val = val.replace(/[۰-۹]/g, d => String(fa.indexOf(d)));
+            val = val.replace(/[٠-٩]/g, d => String(ar.indexOf(d)));
+            val = val.replace(/[.\-\s]+/g, '/').replace(/\/+/g, '/');
+            const m = val.match(/^(1[34]\d{2})\/(\d{1,2})\/(\d{1,2})$/);
+            if (!m) return '';
+            const jy = Number(m[1]), jm = Number(m[2]), jd = Number(m[3]);
+            if (jm < 1 || jm > 12 || jd < 1 || jd > jalaliMonthLength(jy, jm)) return '';
+            return formatJalaliYMD(jy, jm, jd);
+        }
+
+        window.AzadWeekSetSelectedDate = function(rawDate) {
+            const normalized = normalizeJalaliDateInput(rawDate);
+            if (!normalized) return '';
+            globalSelectedDate = normalized;
+            const parsed = parseJalaliYMD(normalized);
+            if (parsed) {
+                currentCalendarYear = parsed.jy;
+                currentCalendarMonth = parsed.jm;
+            }
+            const input = document.getElementById('dateInput');
+            const disp = document.getElementById('dateDisplay');
+            if (input) input.value = normalized;
+            if (disp) {
+                const dayName = parsed ? getJalaliWeekdayName(parsed.jy, parsed.jm, parsed.jd) : '';
+                disp.innerText = `${dayName ? dayName + ' ' : ''}${formatReadableJalaliDate(normalized, true)} (${toFaDigits(normalized)})`;
+                disp.classList.remove('placeholder');
+            }
+            return normalized;
+        };
+
+        window.AzadWeekGetSelectedDate = function() {
+            const input = document.getElementById('dateInput');
+            return normalizeJalaliDateInput(globalSelectedDate || (input && input.value) || '');
+        };
+
+        function updateNavBlobPosition(index = activeTabIndex) {
+            activeTabIndex = index;
+            const nav = document.querySelector('.cyber-nav');
+            const buttons = document.querySelectorAll('.cyber-nav .nav-item');
+            const blob = document.querySelector('.nav-blob');
+            if (!nav || !buttons[index] || !blob) return;
+            const navRect = nav.getBoundingClientRect();
+            const btnRect = buttons[index].getBoundingClientRect();
+            const rightOffset = (navRect.right - btnRect.right) + (btnRect.width / 2) - (blob.offsetWidth / 2);
+            blob.style.right = `${Math.max(8, rightOffset)}px`;
+        }
+
+        let loaderHidden = false;
+        function hideInitialLoader() {
+            if (loaderHidden) return;
+            loaderHidden = true;
+            const loader = document.getElementById('loader');
+            const mainApp = document.getElementById('mainApp');
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    if (mainApp) mainApp.style.opacity = '1';
+                    updateNavBlobPosition(activeTabIndex);
+                }, 220);
+            } else if (mainApp) {
+                mainApp.style.opacity = '1';
+            }
+        }
+
+        function animateTextChange(element, newText) {
+            if (!element) return;
+            const finalStr = String(newText || '');
+            element.innerText = finalStr;
+            element.setAttribute('data-text', finalStr);
+        }
+
+        function fetchData(action, bodyData = new FormData(), retryCount = 1) {
+            if (!bodyData) bodyData = new FormData();
+            if (!bodyData.has('action')) bodyData.append('action', action);
+            if (tg && tg.initData && !bodyData.has('initData')) {
+                bodyData.append('initData', tg.initData);
+            }
+            if (tg && tg.platform && !bodyData.has('tgPlatform')) {
+                bodyData.append('tgPlatform', tg.platform);
+            }
+
+            return fetch(API_URL, { method: 'POST', body: bodyData, cache: 'no-store' })
+            .then(res => {
+                if (!res.ok && res.status !== 403 && res.status !== 422) {
+                    throw new Error('HTTP ' + res.status);
+                }
+                return res.json();
+            })
+            .then(data => {
+                hideInitialLoader();
+                if (!data) return null;
+                if (data.status === 'telegram_only') {
+                    if (!isTelegramAccessAllowed()) {
+                        showTelegramLockScreen(data.bot_url || 'https://t.me/AzadWeekBot');
+                    }
+                    return data;
+                }
+                if (data.status === 'error') {
+                    if (tg && tg.showAlert) tg.showAlert(data.message || 'خطایی رخ داد.');
+                    return data;
+                }
+                if (action === 'init' && data.status === 'success') {
+                    renderHome(data);
+                }
+                return data;
+            })
+            .catch(err => {
+                if (retryCount > 0) {
+                    return new Promise(resolve => setTimeout(resolve, 600)).then(() => fetchData(action, bodyData, retryCount - 1));
+                }
+                console.warn('Using local calculation fallback:', err);
+                hideInitialLoader();
+                if (action === 'init') {
+                    const localData = buildLocalInitPayload();
+                    renderHome(localData);
+                    return localData;
+                }
+                if (action === 'check_date') {
+                    const requestedDate = bodyData.get('date') || window.AzadWeekGetSelectedDate();
+                    return buildLocalCheckResult(requestedDate);
+                }
+                return null;
+            });
+        }
+
+        function renderHome(data) {
+            if (!data) return;
+            if (data.user) {
+                renderUserProfile(data.user, data.user.avatar_proxy_url || '');
+            }
+
+            const headerDateEl = document.getElementById('headerDate');
+            if (headerDateEl && data.today) {
+                const readableToday = formatReadableJalaliDate(data.today, false);
+                headerDateEl.innerText = `${data.today_day ? data.today_day + ' ' : ''}${readableToday}`;
+            }
+
+            const title = document.getElementById('statusTitle');
+            animateTextChange(title, data.today_status || 'وضعیت هفته');
+
+            const ionicIcon = document.getElementById('statusIconIonic');
+            const imageIcon = document.getElementById('statusIconImage');
+            const desc = document.getElementById('statusDesc');
+
+            ionicIcon.classList.add('hidden');
+            imageIcon.classList.add('hidden');
+
+            const statusStr = String(data.today_status || '');
+            if (statusStr.includes('فرد')) {
+                document.body.setAttribute('data-week-mode', 'odd');
+                imageIcon.src = 'assets/odd-week-icon.png';
+                imageIcon.onload = () => { imageIcon.classList.remove('hidden'); ionicIcon.classList.add('hidden'); };
+                imageIcon.onerror = () => { imageIcon.classList.add('hidden'); ionicIcon.classList.remove('hidden'); };
+                ionicIcon.setAttribute('name', 'flash-outline');
+                renderIconsIn(ionicIcon.parentElement);
+                imageIcon.classList.remove('hidden');
+                desc.innerText = 'در این هفته، کلاس‌های مربوط به «هفته‌های فرد» دانشگاه تشکیل می‌شوند';
+            } else if (statusStr.includes('زوج')) {
+                document.body.setAttribute('data-week-mode', 'even');
+                imageIcon.src = 'assets/even-week-icon.png';
+                imageIcon.onload = () => { imageIcon.classList.remove('hidden'); ionicIcon.classList.add('hidden'); };
+                imageIcon.onerror = () => { imageIcon.classList.add('hidden'); ionicIcon.classList.remove('hidden'); };
+                ionicIcon.setAttribute('name', 'infinite-outline');
+                renderIconsIn(ionicIcon.parentElement);
+                imageIcon.classList.remove('hidden');
+                desc.innerText = 'در این هفته، کلاس‌های مربوط به «هفته‌های زوج» دانشگاه تشکیل می‌شوند';
+            } else {
+                document.body.setAttribute('data-week-mode', 'default');
+                ionicIcon.setAttribute('name', 'moon-outline');
+                renderIconsIn(ionicIcon.parentElement);
+                ionicIcon.classList.remove('hidden');
+                desc.innerText = 'امروز خارج از بازه کلاس‌های این ترم است';
+            }
+
+            const weeks = Array.isArray(data.weeks) && data.weeks.length ? data.weeks : buildLocalInitPayload().weeks;
+            cachedWeeksData = weeks;
+            const curr = weeks.find(w => w.is_current);
+            const totalWeeks = weeks.length || 17;
+            const currNum = curr ? Number(curr.id) : 0;
+
+            document.getElementById('currentWeekNum').innerText = currNum > 0 ? toFaDigits(currNum) : '—';
+            const subEl = document.getElementById('currentWeekSub');
+            if (subEl) subEl.innerText = currNum > 0 ? `از ${toFaDigits(totalWeeks)} هفته آموزشی` : 'خارج از بازه ترم';
+
+            const currentWeekRangeText = document.getElementById('currentWeekRangeText');
+            if (currentWeekRangeText) {
+                if (curr && curr.start && curr.end) {
+                    currentWeekRangeText.innerText = `بازه این هفته: ${formatReadableJalaliRange(curr.start, curr.end)}`;
+                } else {
+                    currentWeekRangeText.innerText = `بازه ترم: ${formatReadableJalaliRange(weeks[0].start, weeks[weeks.length - 1].end)}`;
+                }
+            }
+
+            const left = (data.term && typeof data.term.days_to_end === 'number')
+                ? data.term.days_to_end
+                : (curr ? Math.max(0, daysBetweenJalali(data.today, weeks[weeks.length - 1].end)) : 0);
+            document.getElementById('daysLeft').innerText = toFaDigits(left > 0 ? left : 0);
+            const daysLeftSub = document.getElementById('daysLeftSub');
+            if (daysLeftSub && weeks.length) {
+                daysLeftSub.innerText = `روز تا ${formatReadableJalaliDate(weeks[weeks.length - 1].end, false)}`;
+            }
+
+            const termRangeEl = document.getElementById('heroTermRange');
+            if (termRangeEl && weeks.length) {
+                termRangeEl.innerText = `بازه ترم: ${formatReadableJalaliDate(weeks[0].start, false)} تا ${formatReadableJalaliDate(weeks[weeks.length - 1].end, false)}`;
+            }
+
+            const nextPill = document.getElementById('heroNextWeekPill');
+            if (nextPill) {
+                const nextWeekObj = currNum > 0 ? weeks.find(w => Number(w.id) === currNum + 1) : weeks.find(w => w.start > (data.today || ''));
+                nextPill.innerHTML = nextWeekObj
+                    ? `هفته آینده: <strong>${nextWeekObj.status}</strong>`
+                    : `وضعیت: <strong>هفته پایانی ترم</strong>`;
+            }
+
+            let pct = 0;
+            if (data.term && typeof data.term.progress_percent === 'number') {
+                pct = data.term.progress_percent;
+            } else if (weeks.length && data.today) {
+                const tDays = Math.max(1, daysBetweenJalali(weeks[0].start, weeks[weeks.length - 1].end) + 1);
+                const eDays = Math.max(0, Math.min(tDays, daysBetweenJalali(weeks[0].start, data.today) + 1));
+                pct = Math.round((eDays / tDays) * 100);
+            }
+
+            const pctEl = document.getElementById('termProgressPct');
+            const fillEl = document.getElementById('termProgressFill');
+            const progLabelEl = document.getElementById('termProgressLabel');
+            if (pctEl) pctEl.innerText = `${toFaDigits(pct)}٪`;
+            if (fillEl) fillEl.style.width = `${pct}%`;
+            if (progLabelEl) {
+                progLabelEl.innerText = currNum > 0
+                    ? `پیشرفت ترم آموزشی (هفته ${toFaDigits(currNum)} از ${toFaDigits(totalWeeks)})`
+                    : 'پیشرفت ترم آموزشی';
+            }
+
+            const totalBadge = document.getElementById('termTotalBadge');
+            if (totalBadge) totalBadge.innerText = `${toFaDigits(totalWeeks)} هفته آموزشی`;
+
+            renderWeekListItems('all');
+        }
+
+        function renderWeekListItems(filterMode = 'all') {
+            const container = document.getElementById('weekList');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const filtered = cachedWeeksData.filter(week => {
+                if (filterMode === 'all') return true;
+                return String(week.status || '').includes(filterMode);
+            });
+
+            filtered.forEach((week) => {
+                const div = document.createElement('div');
+                div.className = `week-row ${week.is_current ? 'current' : ''}`;
+                const isOdd = String(week.status || '').includes('فرد');
+                const color = isOdd ? 'var(--odd-color)' : 'var(--even-color)';
+                const badgeBg = isOdd ? 'var(--odd-bg)' : 'var(--even-bg)';
+                const readableRange = (week.start && week.end) ? formatReadableJalaliRange(week.start, week.end) : toFaDigits(week.start);
+
+                div.innerHTML = `
+                    <div>
+                        <div style="font-weight:700; font-size:0.94rem;">
+                            هفته ${toFaDigits(week.id)} ${week.is_current ? '<span style="color:var(--accent);font-size:0.75rem;margin-right:6px;">● هفته فعلی</span>' : ''}
+                        </div>
+                        <div style="font-size:0.77rem; color:var(--text-muted); margin-top:4px;">${readableRange}</div>
+                    </div>
+                    <div class="week-badge-pill" style="color: ${color}; background: ${badgeBg}; border-color: ${color}40;">${week.status}</div>`;
+
+                div.onclick = () => {
+                    window.AzadWeekSetSelectedDate(week.start);
+                    switchView('search', 1);
+                    setTimeout(() => checkDate(), 80);
+                };
+                container.appendChild(div);
+            });
+        }
+
+        function filterWeekList(mode, btnEl) {
+            document.querySelectorAll('.filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+            renderWeekListItems(mode);
+            try { tg && tg.HapticFeedback && tg.HapticFeedback.selectionChanged(); } catch(e){}
+        }
+
+        function quickPickDate(preset) {
+            let offset = 0;
+            const todayInfo = getTodayJalaliInfo(0);
+            if (preset === 'tomorrow') {
+                offset = 1;
+            } else if (preset === 'next_week') {
+                offset = 7;
+            } else if (preset === 'next_sat') {
+                offset = ((7 - todayInfo.satZeroWeekday) % 7) || 7;
+            }
+            const target = getTodayJalaliInfo(offset);
+            window.AzadWeekSetSelectedDate(target.ymd);
+            if (activeTabIndex !== 1) {
+                switchView('search', 1);
+            }
+            setTimeout(() => checkDate(), 60);
+        }
+
+        function renderCustomCalendar() {
+            const monthName = JALALI_MONTHS[currentCalendarMonth - 1] || '';
+            document.getElementById('calMonthYear').innerText = `${monthName} ${toFaDigits(currentCalendarYear)}`;
+
+            const daysInMonth = jalaliMonthLength(currentCalendarYear, currentCalendarMonth);
+            const startDayOfWeek = getJalaliWeekdayIndexSatZero(currentCalendarYear, currentCalendarMonth, 1);
+
+            const grid = document.getElementById('calGrid');
+            grid.innerHTML = '';
+
+            for (let i = 0; i < startDayOfWeek; i++) {
+                grid.appendChild(document.createElement('div')).className = 'cal-day empty';
+            }
+
+            const todayStr = getTodayJalaliInfo(0).ymd;
+
+            for (let d = 1; d <= daysInMonth; d++) {
+                const dayEl = document.createElement('div');
+                dayEl.className = 'cal-day';
+                dayEl.innerText = toFaDigits(d);
+
+                const thisDateStr = formatJalaliYMD(currentCalendarYear, currentCalendarMonth, d);
+                dayEl.dataset.date = thisDateStr;
+
+                if (thisDateStr === todayStr) dayEl.classList.add('today');
+                if (thisDateStr === globalSelectedDate) dayEl.classList.add('selected');
+
+                dayEl.onclick = () => {
+                    document.querySelectorAll('.cal-day').forEach(e => e.classList.remove('selected'));
+                    dayEl.classList.add('selected');
+                    globalSelectedDate = thisDateStr;
+                    try { tg && tg.HapticFeedback && tg.HapticFeedback.selectionChanged(); } catch(e){}
+                };
+                grid.appendChild(dayEl);
+            }
+        }
+
+        function changeMonth(dir) {
+            currentCalendarMonth += dir;
+            if (currentCalendarMonth > 12) {
+                currentCalendarMonth = 1;
+                currentCalendarYear += 1;
+            } else if (currentCalendarMonth < 1) {
+                currentCalendarMonth = 12;
+                currentCalendarYear -= 1;
+            }
+            renderCustomCalendar();
+            try { tg && tg.HapticFeedback && tg.HapticFeedback.impactOccurred('light'); } catch(e){}
+        }
+
+        function openCalendar() {
+            const parsed = parseJalaliYMD(globalSelectedDate) || getTodayJalaliInfo(0);
+            currentCalendarYear = parsed.jy;
+            currentCalendarMonth = parsed.jm;
+            renderCustomCalendar();
+            document.getElementById('calendar-modal').classList.add('show');
+            try { tg && tg.HapticFeedback && tg.HapticFeedback.impactOccurred('medium'); } catch(e){}
+        }
+
+        function closeCalendar(e) {
+            if (e && !e.target.classList.contains('bottom-sheet-overlay') && !e.target.closest('.close-btn')) return;
+            document.getElementById('calendar-modal').classList.remove('show');
+            document.body.classList.remove('aw-sheet-open');
+            document.documentElement.classList.remove('aw-sheet-open');
+            try { if (tg && tg.disableVerticalSwipes) tg.disableVerticalSwipes(); } catch(e){}
+        }
+
+        function confirmDate() {
+            if (!globalSelectedDate) globalSelectedDate = getTodayJalaliInfo(0).ymd;
+            const normalized = normalizeJalaliDateInput(globalSelectedDate);
+            if (!normalized) return tg && tg.showAlert && tg.showAlert('تاریخ انتخاب‌شده معتبر نیست. دوباره انتخاب کنید.');
+            window.AzadWeekSetSelectedDate(normalized);
+            document.getElementById('calendar-modal').classList.remove('show');
+            document.body.classList.remove('aw-sheet-open');
+            document.documentElement.classList.remove('aw-sheet-open');
+            try { if (tg && tg.disableVerticalSwipes) tg.disableVerticalSwipes(); } catch(e){}
+            try { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred('success'); } catch(e){}
+            setTimeout(() => checkDate(), 60);
+        }
+
+        function checkDate() {
+            const val = window.AzadWeekGetSelectedDate ? window.AzadWeekGetSelectedDate() : normalizeJalaliDateInput(document.getElementById('dateInput').value);
+            if (!val) return tg && tg.showAlert && tg.showAlert('لطفاً ابتدا یک تاریخ را از تقویم انتخاب کنید.');
+            window.AzadWeekSetSelectedDate(val);
+            const btn = document.querySelector('#view-search .neon-btn span');
+            if (btn) btn.innerText = 'در حال بررسی...';
+            const fd = new FormData();
+            fd.append('date', val);
+            fetchData('check_date', fd).then(d => {
+                if (btn) btn.innerText = 'مشاهده وضعیت این تاریخ';
+                const result = (d && d.status === 'success') ? d : buildLocalCheckResult(val);
+                if (!result) return;
+                const res = document.getElementById('resultCard');
+                res.classList.remove('hidden');
+                document.getElementById('resDate').innerText = `${formatReadableJalaliDate(result.date, true)} (${toFaDigits(result.date)})`;
+                document.getElementById('resDay').innerText = result.day;
+
+                const weekRow = document.getElementById('resWeekRow');
+                const weekNumEl = document.getElementById('resWeekNum');
+                const rangeRow = document.getElementById('resRangeRow');
+                const rangeEl = document.getElementById('resWeekRange');
+
+                if (weekRow && weekNumEl) {
+                    if (result.week_number) {
+                        weekRow.classList.remove('hidden');
+                        weekNumEl.innerText = `هفته ${toFaDigits(result.week_number)} از ۱۷`;
+                    } else {
+                        weekRow.classList.add('hidden');
+                    }
+                }
+                if (rangeRow && rangeEl) {
+                    if (result.week_start && result.week_end) {
+                        rangeRow.classList.remove('hidden');
+                        rangeEl.innerText = formatReadableJalaliRange(result.week_start, result.week_end);
+                    } else {
+                        rangeRow.classList.add('hidden');
+                    }
+                }
+
+                const stat = document.getElementById('resStatus');
+                animateTextChange(stat, result.week_status);
+                const isOdd = String(result.week_status || '').includes('فرد');
+                const isEven = String(result.week_status || '').includes('زوج');
+                const color = isOdd ? 'var(--odd-color)' : (isEven ? 'var(--even-color)' : '#CBD5E1');
+                stat.style.color = color;
+                try { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred('success'); } catch(e){}
+            }).catch(() => {
+                if (btn) btn.innerText = 'مشاهده وضعیت این تاریخ';
+            });
+        }
+
+        function switchView(viewName, index) {
+            document.body.classList.remove('aw-sheet-open');
+            document.documentElement.classList.remove('aw-sheet-open');
+            try { if (tg && tg.disableVerticalSwipes) tg.disableVerticalSwipes(); } catch(e){}
+            const targetId = `view-${viewName}`;
+            document.querySelectorAll('.view').forEach(v => {
+                if (v.id === targetId) {
+                    v.style.display = 'block';
+                    v.classList.add('active-view');
+                } else {
+                    v.classList.remove('active-view');
+                    v.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.cyber-nav .nav-item:not(.nav-settings)').forEach((b, i) => {
+                b.classList.toggle('active', i === index);
+            });
+            updateNavBlobPosition(index);
+            try { tg && tg.HapticFeedback && tg.HapticFeedback.impactOccurred('light'); } catch(e){}
+        }
+
+        function bootstrapApp() {
+            renderIconsIn(document);
+            if (!isTelegramAccessAllowed()) {
+                showTelegramLockScreen('https://t.me/AzadWeekBot');
+                return;
+            }
+            renderUserProfile();
+            const todayInfo = getTodayJalaliInfo(0);
+            window.AzadWeekSetSelectedDate(todayInfo.ymd);
+
+            renderHome(buildLocalInitPayload());
+            hideInitialLoader();
+            setTimeout(() => updateNavBlobPosition(0), 80);
+
+            fetchData('init');
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', bootstrapApp);
+        } else {
+            bootstrapApp();
+        }
+        window.addEventListener('resize', () => updateNavBlobPosition(activeTabIndex));
+
+</script>
+    <script src="aw_native.js?v=17"></script>
+</body>
+</html>

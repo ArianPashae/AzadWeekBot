@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+*.log
+*.zip
+AzadWeekBot/users_to_send.txt
+AzadWeekBot/broadcast_queue.json
+AzadWeekBot/last_scheduled_send.txt
+AzadWeekBot/storage_backups/*.json
+AzadWeekBot/storage_backups/*.lock
+AzadWeekBot/storage_backups/*.txt
+AzadWeek/assets/generated_cards/aw_card_*
