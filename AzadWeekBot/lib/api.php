@@ -192,7 +192,7 @@ function syncBotCommandsOnce($force = false) {
                     'type' => 'web_app',
                     'text' => 'Open App',
                     'web_app' => [
-                        'url' => defined('MINIAPP_URL') ? MINIAPP_URL : 'https://arianpashae.com/UniWebsite/AzadWeek/?action=app&v=17'
+                        'url' => defined('MINIAPP_URL') ? MINIAPP_URL : 'https://example.com/AzadWeek/?action=app&v=17'
                     ]
                 ])
             ],

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="fg" x1="8" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#FDE047"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FDE047" stop-opacity="0.15"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#FDE047" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#bg)" stroke="url(#border)" stroke-width="1.5"/>
+  <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#glow)"/>
+  
+  <path d="M10 16C10 13.8 11.8 12 14 12H20.5L23.5 15.5H34C36.2 15.5 38 17.3 38 19.5V32C38 34.2 36.2 36 34 36H14C11.8 36 10 34.2 10 32V16Z" fill="url(#fg)"/>
+  <path d="M14 23H34M14 28.5H27" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round" stroke-opacity="0.65"/>
+
+</svg>

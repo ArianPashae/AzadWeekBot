@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="fg" x1="8" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.15"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#bg)" stroke="url(#border)" stroke-width="1.5"/>
+  <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#glow)"/>
+  
+  <path d="M28.5 11.5C32.5 11.5 36.5 12.5 36.5 12.5C36.5 12.5 37.5 16.5 37.5 20.5C37.5 25.5 33 30.5 27.5 33L21 26.5C23.5 21 28.5 11.5 28.5 11.5Z" fill="url(#fg)"/>
+  <path d="M21 26.5L15 32.5L16.5 36.5L20.5 38L26.5 32" stroke="url(#fg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20 22L14 23.5L11.5 27.5L16.5 29" stroke="#C084FC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M27 29L25.5 35L21.5 37.5L20 32.5" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="29.5" cy="19.5" r="2.8" fill="#0F172A" stroke="#F8FAFC" stroke-width="1.8"/>
+
+</svg>

@@ -7,9 +7,9 @@ if (basename($_SERVER['SCRIPT_FILENAME'] ?? '') === basename(__FILE__)) {
 define('BOT_TOKEN', 'YOUR_BOT_TOKEN_HERE');
 define('API_URL', 'https://api.telegram.org/bot' . BOT_TOKEN . '/');
 define('BOT_USERNAME', 'AzadWeekBot');
-define('BASE_URL', 'https://arianpashae.com/University/AzadWeekBot/');
-define('MINIAPP_URL', 'https://arianpashae.com/UniWebsite/AzadWeek/?action=app&v=17');
-define('ADMIN_IDS', ['5472263975', '1975573498', '1235825796']);
+define('BASE_URL', 'https://example.com/AzadWeekBot/');
+define('MINIAPP_URL', 'https://example.com/AzadWeek/?action=app&v=17');
+define('ADMIN_IDS', ['YOUR_ADMIN_TELEGRAM_ID']);
 define('CRON_SECRET_KEY', 'YOUR_CRON_SECRET_KEY');
 define('GROUP_STATUS_AUTODELETE_SECONDS', 20);
 define('MEMBERSHIP_CACHE_TTL', 180);

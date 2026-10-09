@@ -36,12 +36,10 @@ function aw_resolve_bot_root(): string {
     $env = getenv('AZAD_WEEK_BOT_ROOT');
     $candidates = array_filter([
         $env ?: null,
-        __DIR__ . '/../../University/AzadWeekBot',
-        __DIR__ . '/../AzadWeekBot',
+                __DIR__ . '/../AzadWeekBot',
         __DIR__ . '/../../AzadWeekBot',
         dirname(__DIR__) . '/AzadWeekBot',
-        ($_SERVER['DOCUMENT_ROOT'] ?? '') . '/University/AzadWeekBot',
-        ($_SERVER['DOCUMENT_ROOT'] ?? '') . '/AzadWeekBot',
+                ($_SERVER['DOCUMENT_ROOT'] ?? '') . '/AzadWeekBot',
     ]);
     foreach ($candidates as $candidate) {
         $real = realpath($candidate);
